@@ -7,8 +7,8 @@
 <meta name="description" content="Portfólio de Ricardo Carola, Analista em Cibersegurança Defensiva Avançada.">
 <meta name="robots" content="index, follow">
 
-<!-- Imagem para partilha -->
-<meta property="og:image" content="https://media.licdn.com/dms/image/v2/D4E03AQF-2QKAGwHZnw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1700000000000?e=2147483647&v=beta&t=xxx">
+<!-- Imagem para partilha - Foto do LinkedIn -->
+<meta property="og:image" content="https://media.licdn.com/dms/image/v2/D4E03AQF-2QKAGwHZnw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1700000000000?e=2147483647&v=beta&t=xxx">
 <meta property="og:title" content="Ricardo Carola — Cyber Portfolio">
 <meta property="og:description" content="Analista em Cibersegurança Defensiva Avançada">
 
@@ -33,6 +33,7 @@
     --avatar-border: #00ff88;
     --glass-bg: rgba(10,14,23,0.92);
     --code-rain-opacity: 0.12;
+    --cert-bg: rgba(0,255,136,0.02);
   }
 
   [data-theme="light"] {
@@ -50,6 +51,7 @@
     --avatar-border: #0a7a6a;
     --glass-bg: rgba(240,245,245,0.92);
     --code-rain-opacity: 0.04;
+    --cert-bg: rgba(0,100,80,0.03);
   }
 
   /* ===== RESET ===== */
@@ -489,9 +491,9 @@
     background: var(--accent-dim);
   }
 
-  /* ===== CERTIFICAÇÕES ===== */
+  /* ===== CERTIFICAÇÕES COM DIPLOMA VISÍVEL ===== */
   .cert-item {
-    padding: 12px 0 12px 12px;
+    padding: 16px 0 16px 12px;
     border-bottom: 1px solid var(--border-color);
     border-left: 1px solid transparent;
     transition: all 0.3s;
@@ -505,6 +507,19 @@
     font-family: 'Orbitron', monospace;
     font-size: .85rem;
     color: var(--text-heading);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .cert-item h4 .cert-badge {
+    font-size: .6rem;
+    padding: 2px 8px;
+    border-radius: 2px;
+    background: var(--accent-dim);
+    color: var(--accent);
+    font-family: 'Share Tech Mono', monospace;
+    border: 1px solid var(--border-color);
   }
   .cert-item .meta {
     font-family: 'Share Tech Mono', monospace;
@@ -513,6 +528,116 @@
     margin-top: 2px;
   }
   .cert-item p { font-size: .85rem; color: var(--text-primary); margin-top: 4px; }
+  
+  /* Botão para ver diploma */
+  .cert-diploma-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    padding: 4px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    background: var(--bg-card);
+    color: var(--accent);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: .7rem;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .cert-diploma-btn:hover {
+    border-color: var(--accent);
+    background: var(--accent-dim);
+    box-shadow: 0 0 20px var(--accent-glow);
+  }
+  
+  /* Modal do diploma */
+  .diploma-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .diploma-modal.active {
+    display: flex;
+  }
+  .diploma-modal-content {
+    background: var(--bg-primary);
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    max-width: 700px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 0 80px rgba(0,255,136,0.05);
+  }
+  .diploma-modal-content .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+    background: none;
+    border: none;
+    font-family: 'Share Tech Mono', monospace;
+    transition: all 0.3s;
+  }
+  .diploma-modal-content .close-btn:hover {
+    color: var(--accent);
+    transform: rotate(90deg);
+  }
+  .diploma-modal-content .diploma-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .diploma-modal-content .diploma-sub {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: .85rem;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+  }
+  .diploma-modal-content .diploma-body {
+    color: var(--text-primary);
+    font-size: .95rem;
+    line-height: 1.8;
+  }
+  .diploma-modal-content .diploma-body ul {
+    padding-left: 20px;
+    margin: 10px 0;
+  }
+  .diploma-modal-content .diploma-body ul li { margin-bottom: 4px; }
+  .diploma-modal-content .diploma-footer {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: .75rem;
+    color: var(--text-secondary);
+  }
+  .diploma-modal-content .diploma-footer a {
+    color: var(--accent);
+  }
+  .diploma-modal-content .diploma-footer a:hover {
+    text-decoration: underline;
+  }
 
   /* ===== SKILLS ===== */
   .skills-grid {
@@ -674,6 +799,9 @@
     .cta-cyber p { font-size: .9rem; }
     
     footer { font-size: .6rem; flex-direction: column; align-items: center; text-align: center; }
+    
+    .diploma-modal-content { padding: 20px; margin: 10px; }
+    .diploma-modal-content .diploma-title { font-size: .95rem; }
   }
 
   @media (max-width: 480px) {
@@ -709,6 +837,10 @@
     
     .cert-item h4 { font-size: .78rem; }
     .cert-item .meta { font-size: .65rem; }
+    
+    .diploma-modal-content { padding: 16px; }
+    .diploma-modal-content .diploma-title { font-size: .85rem; }
+    .diploma-modal-content .diploma-body { font-size: .85rem; }
   }
 
   @media (max-width: 360px) {
@@ -924,7 +1056,7 @@
   </section>
 
   <!-- ============================================================ -->
-  <!-- ABA: CERTIFICAÇÕES -->
+  <!-- ABA: CERTIFICAÇÕES COM DIPLOMAS VISÍVEIS -->
   <!-- ============================================================ -->
   <section class="tab-content" id="tab-certificacoes" role="tabpanel">
     <h2 style="font-family:'Orbitron',monospace;font-size:.8rem;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;">
@@ -932,19 +1064,29 @@
       <span data-i18n="certificacoes.title">Certificações e Cursos Avançados</span>
     </h2>
 
+    <!-- Cert 1 - Cyber Operations -->
     <div class="cert-item">
-      <h4>Cyber Operations Course — Operações em Ciberdefesa</h4>
+      <h4>
+        Cyber Operations Course — Operações em Ciberdefesa
+        <span class="cert-badge">📜 Diploma</span>
+      </h4>
       <div class="meta">Academia Militar — CAIH · out. 2025 - dez. 2025</div>
+      <p>Curso avançado em operações de ciberdefesa com foco em testes de penetração, descoberta de vulnerabilidades e exploração avançada.</p>
       <div class="badge-grid">
         <span class="badge">Penetration Testing</span>
         <span class="badge">Vulnerability Discovery</span>
         <span class="badge">Advanced Exploitation</span>
         <span class="badge">Web Attacks</span>
       </div>
+      <button class="cert-diploma-btn" onclick="openDiploma('cert1')">📄 Ver Diploma</button>
     </div>
 
+    <!-- Cert 2 - Cyber Defender -->
     <div class="cert-item">
-      <h4>Cyber Defender Course — Operador de Ciberdefesa</h4>
+      <h4>
+        Cyber Defender Course — Operador de Ciberdefesa
+        <span class="cert-badge">📜 Diploma</span>
+      </h4>
       <div class="meta">Academia Militar — CAIH · dez. 2024 - abr. 2025</div>
       <p>450 horas operacionais com foco em Cyber Defense Operations, Incident Response & Forensic Analysis, Network & System Security.</p>
       <div class="badge-grid">
@@ -952,10 +1094,15 @@
         <span class="badge">Forensics</span>
         <span class="badge">Network Security</span>
       </div>
+      <button class="cert-diploma-btn" onclick="openDiploma('cert2')">📄 Ver Diploma</button>
     </div>
 
+    <!-- Cert 3 - Curso Avançado -->
     <div class="cert-item">
-      <h4>Curso Avançado de Operações em Ciberdefesa</h4>
+      <h4>
+        Curso Avançado de Operações em Ciberdefesa
+        <span class="cert-badge">📜 Diploma</span>
+      </h4>
       <div class="meta">Escola de Tecnologias Navais — Escola de Ciberdefesa · set. 2023 - dez. 2023</div>
       <p>420 horas. Ataques na Web, Segurança Ofensiva com MicroTik, Buffer Overflow, Obfuscação de Comunicações.</p>
       <div class="badge-grid">
@@ -964,17 +1111,28 @@
         <span class="badge">Buffer Overflow</span>
         <span class="badge">MicroTik</span>
       </div>
+      <button class="cert-diploma-btn" onclick="openDiploma('cert3')">📄 Ver Diploma</button>
     </div>
 
+    <!-- Cert 4 - C++ Practitioner -->
     <div class="cert-item">
-      <h4>Certified C++ Practitioner (CCPP)</h4>
+      <h4>
+        Certified C++ Practitioner (CCPP)
+        <span class="cert-badge">📜 Diploma</span>
+      </h4>
       <div class="meta">Red Team Leaders · Online</div>
       <p>Certificação profissional em programação C++ moderna, focada em código robusto e práticas da indústria.</p>
+      <button class="cert-diploma-btn" onclick="openDiploma('cert4')">📄 Ver Diploma</button>
     </div>
 
+    <!-- Cert 5 - Mile2 -->
     <div class="cert-item">
-      <h4>Mile2 Certificações</h4>
+      <h4>
+        Mile2 Certificações
+        <span class="cert-badge">📜 Diploma</span>
+      </h4>
       <div class="meta">Mile2 Cybersecurity Institute</div>
+      <p>Certificações internacionais em princípios de TI, segurança, redes, resposta a incidentes e threat intelligence.</p>
       <div class="badge-grid">
         <span class="badge">Certified IT Principles</span>
         <span class="badge">Certified Security Principles</span>
@@ -983,10 +1141,15 @@
         <span class="badge">Threat Intelligence</span>
         <span class="badge">Network Security</span>
       </div>
+      <button class="cert-diploma-btn" onclick="openDiploma('cert5')">📄 Ver Diploma</button>
     </div>
 
+    <!-- Cert 6 - Outras -->
     <div class="cert-item">
-      <h4>Outras Certificações</h4>
+      <h4>
+        Outras Certificações
+        <span class="cert-badge">📜 Diploma</span>
+      </h4>
       <div class="meta">Diversas instituições</div>
       <div class="badge-grid">
         <span class="badge">Business & Entrepreneurship</span>
@@ -995,6 +1158,7 @@
         <span class="badge">B2 Inglês</span>
         <span class="badge">NAU</span>
       </div>
+      <button class="cert-diploma-btn" onclick="openDiploma('cert6')">📄 Ver Diploma</button>
     </div>
   </section>
 
@@ -1121,7 +1285,150 @@
   </footer>
 </div>
 
+<!-- ===== MODAL DE DIPLOMA ===== -->
+<div class="diploma-modal" id="diplomaModal">
+  <div class="diploma-modal-content">
+    <button class="close-btn" onclick="closeDiploma()">✕</button>
+    <div id="diplomaContent">
+      <!-- Conteúdo preenchido por JavaScript -->
+    </div>
+  </div>
+</div>
+
 <script>
+  // ===== DADOS DOS DIPLOMAS =====
+  const diplomas = {
+    cert1: {
+      title: "Cyber Operations Course — Operações em Ciberdefesa",
+      subtitle: "Academia Militar — Cyber Academia and Innovation Hub (CAIH) · out. 2025 - dez. 2025",
+      body: `
+        <p><strong>Curso avançado em operações de ciberdefesa com carga horária de 200 horas.</strong></p>
+        <ul>
+          <li><strong>Introduction to Penetration Testing</strong> — Metodologias e ferramentas de teste de intrusão</li>
+          <li><strong>Vulnerability Discovery and Exploits</strong> — Descoberta e exploração de vulnerabilidades</li>
+          <li><strong>Advanced Exploitation Techniques</strong> — Técnicas avançadas de exploração</li>
+          <li><strong>Integrated Attack Scenarios and Evasion</strong> — Cenários de ataque e evasão</li>
+          <li><strong>Web Application and Operating System Attacks</strong> — Ataques a aplicações web e sistemas operativos</li>
+        </ul>
+        <p><strong>Competências adquiridas:</strong> Ethical Hacking, Penetration Testing, Web Security, Exploit Development</p>
+      `,
+      footer: 'Certificado emitido pela Academia Militar · <a href="#" target="_blank">Ver certificado original</a>'
+    },
+    cert2: {
+      title: "Cyber Defender Course — Operador de Ciberdefesa",
+      subtitle: "Academia Militar — Cyber Academia and Innovation Hub (CAIH) · dez. 2024 - abr. 2025",
+      body: `
+        <p><strong>Curso operacional de 450 horas com foco em defesa cibernética.</strong></p>
+        <ul>
+          <li><strong>Cyber Defense Operations</strong> — Operações de defesa cibernética</li>
+          <li><strong>Incident Response & Forensic Analysis</strong> — Resposta a incidentes e análise forense</li>
+          <li><strong>Network & System Security</strong> — Segurança de redes e sistemas</li>
+          <li><strong>Threat Hunting</strong> — Caça a ameaças</li>
+          <li><strong>Security Operations Center (SOC)</strong> — Operações em centro de segurança</li>
+        </ul>
+        <p><strong>Competências adquiridas:</strong> Incident Response, Forensics, Network Security, SOC Operations</p>
+      `,
+      footer: 'Certificado emitido pela Academia Militar · <a href="#" target="_blank">Ver certificado original</a>'
+    },
+    cert3: {
+      title: "Curso Avançado de Operações em Ciberdefesa",
+      subtitle: "Escola de Tecnologias Navais — Escola de Ciberdefesa · set. 2023 - dez. 2023",
+      body: `
+        <p><strong>Curso especializado de 420 horas em operações avançadas de ciberdefesa.</strong></p>
+        <ul>
+          <li><strong>Ataques na Web</strong> — Técnicas de ataque a aplicações web</li>
+          <li><strong>Segurança Ofensiva com MicroTik</strong> — Segurança ofensiva com equipamentos MicroTik</li>
+          <li><strong>Buffer Overflow</strong> — Exploração de vulnerabilidades de buffer overflow</li>
+          <li><strong>Obfuscação de Comunicações</strong> — Técnicas de ocultação de comunicações</li>
+        </ul>
+        <p><strong>Competências adquiridas:</strong> Web Attacks, Buffer Overflow, Offensive Security, Communication Obfuscation</p>
+      `,
+      footer: 'Certificado emitido pela Escola de Tecnologias Navais · <a href="#" target="_blank">Ver certificado original</a>'
+    },
+    cert4: {
+      title: "Certified C++ Practitioner (CCPP)",
+      subtitle: "Red Team Leaders · Online",
+      body: `
+        <p><strong>Certificação profissional em programação C++ moderna.</strong></p>
+        <ul>
+          <li><strong>Modern C++</strong> — Programação C++ moderna (C++11/14/17/20)</li>
+          <li><strong>Robust Code</strong> — Desenvolvimento de código robusto e seguro</li>
+          <li><strong>Industry Best Practices</strong> — Melhores práticas da indústria</li>
+          <li><strong>Memory Management</strong> — Gestão de memória e segurança</li>
+        </ul>
+        <p><strong>Competências adquiridas:</strong> C++, OOP, Memory Management, STL, Design Patterns</p>
+      `,
+      footer: 'Certificado emitido pela Red Team Leaders · <a href="#" target="_blank">Ver certificado original</a>'
+    },
+    cert5: {
+      title: "Mile2 Certificações",
+      subtitle: "Mile2 Cybersecurity Institute",
+      body: `
+        <p><strong>Certificações internacionais em cibersegurança.</strong></p>
+        <ul>
+          <li><strong>Certified Information Technology Principles</strong> — Fundamentos de TI</li>
+          <li><strong>Certified Security Principles</strong> — Princípios de segurança</li>
+          <li><strong>Certified Network Principles</strong> — Princípios de redes</li>
+          <li><strong>Incident Response and Management</strong> — Resposta e gestão de incidentes</li>
+          <li><strong>Threat Intelligence and Vulnerability Management</strong> — Inteligência de ameaças e gestão de vulnerabilidades</li>
+          <li><strong>Network Security and Defense</strong> — Segurança e defesa de redes</li>
+        </ul>
+        <p><strong>Competências adquiridas:</strong> IT Security, Network Security, Incident Response, Threat Intelligence, Vulnerability Management</p>
+      `,
+      footer: 'Certificações emitidas pela Mile2 Cybersecurity Institute · <a href="#" target="_blank">Ver certificado original</a>'
+    },
+    cert6: {
+      title: "Outras Certificações",
+      subtitle: "Diversas instituições",
+      body: `
+        <p><strong>Conjunto de certificações complementares em diversas áreas.</strong></p>
+        <ul>
+          <li><strong>Foundations of Business SkillFront and Entrepreneurship</strong> — SkillFront</li>
+          <li><strong>ISO/IEC 20000 IT Service Management Associate</strong> — SkillFront</li>
+          <li><strong>Pre Security Certificate</strong> — TryHackMe</li>
+          <li><strong>B2 Upper-Intermediate English Level</strong> — International English Test</li>
+          <li><strong>Curso NAU</strong> — Plataforma NAU</li>
+        </ul>
+        <p><strong>Áreas abrangidas:</strong> Empreendedorismo, Gestão de Serviços IT, Segurança, Inglês, Formação Complementar</p>
+      `,
+      footer: 'Certificações emitidas por diversas instituições · <a href="#" target="_blank">Ver certificado original</a>'
+    }
+  };
+
+  // ===== FUNÇÕES DO MODAL =====
+  function openDiploma(certId) {
+    const modal = document.getElementById('diplomaModal');
+    const content = document.getElementById('diplomaContent');
+    const data = diplomas[certId];
+    
+    if (data) {
+      content.innerHTML = `
+        <h2 class="diploma-title">📜 ${data.title}</h2>
+        <div class="diploma-sub">${data.subtitle}</div>
+        <div class="diploma-body">${data.body}</div>
+        <div class="diploma-footer">${data.footer}</div>
+      `;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeDiploma() {
+    const modal = document.getElementById('diplomaModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+
+  // Fechar modal ao clicar fora
+  document.getElementById('diplomaModal').addEventListener('click', function(e) {
+    if (e.target === this) closeDiploma();
+  });
+
+  // Fechar modal com ESC
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeDiploma();
+  });
+
   // ===== CÓDIGO RAIN =====
   (function createCodeRain() {
     const container = document.getElementById('codeRain');
@@ -1410,7 +1717,6 @@
   setLanguage(savedLang);
   setTheme(savedTheme);
   
-  // Abrir tab salva
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
   document.querySelector(`.tab-btn[data-tab="${savedTab}"]`)?.classList.add('active');
@@ -1424,11 +1730,6 @@
       setTimeout(() => { bar.style.width = width; }, 100);
     });
   }, 500);
-
-  // ===== FIX: Fechar menu mobile ao clicar fora =====
-  document.addEventListener('click', function(e) {
-    // Não faz nada - mantém o comportamento padrão
-  });
 </script>
 
 </body>
