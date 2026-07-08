@@ -1,3 +1,1328 @@
+<!DOCTYPE html>
+<html lang="pt-PT" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>Ricardo Carola — Cyber Portfolio</title>
+<meta name="description" content="Portfólio de Ricardo Carola, Analista em Cibersegurança Defensiva Avançada.">
+<meta name="robots" content="index, follow">
+
+<!-- Imagem para partilha - Foto do LinkedIn -->
+<meta property="og:image" content="https://media.licdn.com/dms/image/v2/D4E03AQF-2QKAGwHZnw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1700000000000?e=2147483647&v=beta&t=xxx">
+<meta property="og:title" content="Ricardo Carola — Cyber Portfolio">
+<meta property="og:description" content="Analista em Cibersegurança Defensiva Avançada">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* ===== VARIÁVEIS ===== */
+  :root {
+    --bg-primary: #0a0e17;
+    --bg-secondary: #111927;
+    --bg-card: rgba(0,255,136,0.02);
+    --text-primary: #b8d0e0;
+    --text-secondary: #8aa0b0;
+    --text-heading: #ffffff;
+    --accent: #00ff88;
+    --accent-dim: rgba(0,255,136,0.1);
+    --accent-glow: rgba(0,255,136,0.05);
+    --border-color: rgba(0,255,136,0.08);
+    --avatar-border: #00ff88;
+    --glass-bg: rgba(10,14,23,0.92);
+    --code-rain-opacity: 0.12;
+  }
+
+  [data-theme="light"] {
+    --bg-primary: #f0f5f5;
+    --bg-secondary: #e4ecec;
+    --bg-card: rgba(0,100,80,0.03);
+    --text-primary: #1a2a2a;
+    --text-secondary: #3a5a5a;
+    --text-heading: #0a1a1a;
+    --accent: #0a7a6a;
+    --accent-dim: rgba(0,100,80,0.1);
+    --accent-glow: rgba(0,100,80,0.05);
+    --border-color: rgba(0,100,80,0.12);
+    --avatar-border: #0a7a6a;
+    --glass-bg: rgba(240,245,245,0.92);
+    --code-rain-opacity: 0.04;
+  }
+
+  /* ===== RESET ===== */
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    color:var(--text-primary);
+    background:var(--bg-primary);
+    line-height:1.6;
+    font-size:16px;
+    min-height:100vh;
+    overflow-x:hidden;
+    transition: background 0.4s ease, color 0.4s ease;
+  }
+  a{color:var(--accent);text-decoration:none;transition:all 0.3s}
+  a:hover{color:var(--accent);text-shadow:0 0 20px var(--accent-glow)}
+
+  /* ===== FUNDO CYBER ===== */
+  .cyber-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background: 
+      linear-gradient(rgba(0,255,136,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,136,0.02) 1px, transparent 1px),
+      radial-gradient(ellipse at 50% 50%, var(--bg-secondary) 0%, var(--bg-primary) 70%);
+    background-size: 40px 40px, 40px 40px, 100% 100%;
+    animation: gridScroll 20s linear infinite;
+    transition: background 0.4s ease;
+  }
+  [data-theme="light"] .cyber-bg {
+    background: 
+      linear-gradient(rgba(0,100,80,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,100,80,0.03) 1px, transparent 1px),
+      radial-gradient(ellipse at 50% 50%, #e4ecec 0%, #f0f5f5 70%);
+  }
+  @keyframes gridScroll {
+    0% { background-position: 0 0, 0 0, 0 0; }
+    100% { background-position: 40px 40px, 40px 40px, 0 0; }
+  }
+
+  .code-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    opacity: var(--code-rain-opacity);
+    transition: opacity 0.4s ease;
+  }
+  .code-rain span {
+    display: block;
+    position: absolute;
+    color: var(--accent);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 14px;
+    animation: rain linear infinite;
+    white-space: nowrap;
+  }
+  @keyframes rain {
+    0% { transform: translateY(-100px); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(calc(100vh + 100px)); opacity: 0; }
+  }
+
+  .glitch-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: repeating-linear-gradient(0deg, transparent 0px, rgba(0,255,136,0.008) 2px, transparent 4px);
+    animation: glitch 4s infinite;
+  }
+  [data-theme="light"] .glitch-overlay {
+    background: repeating-linear-gradient(0deg, transparent 0px, rgba(0,100,80,0.008) 2px, transparent 4px);
+  }
+  @keyframes glitch {
+    0%, 90%, 100% { opacity: 0; }
+    92% { opacity: 0.3; }
+    94% { opacity: 0; }
+    96% { opacity: 0.2; }
+  }
+
+  /* ===== TOP BAR ===== */
+  .top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    transition: background 0.4s ease, border-color 0.4s ease;
+  }
+  .top-bar .brand {
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--accent);
+    letter-spacing: 2px;
+    text-shadow: 0 0 30px var(--accent-glow);
+  }
+  .top-bar .brand span { color: var(--text-secondary); opacity: 0.3; }
+  .top-bar .controls {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .top-bar select, .top-bar button {
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    font-size: .7rem;
+    font-family: 'Share Tech Mono', monospace;
+    cursor: pointer;
+    transition: all 0.3s;
+    min-height: 30px;
+  }
+  .top-bar select:hover, .top-bar button:hover {
+    border-color: var(--accent);
+    background: var(--accent-dim);
+  }
+  .top-bar select:focus, .top-bar button:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  .top-bar select option { background: var(--bg-primary); color: var(--text-primary); }
+  .theme-btn { font-size: .9rem; min-width: 34px; display: flex; align-items: center; justify-content: center; }
+
+  /* ===== CONTAINER ===== */
+  .container {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 16px 30px;
+  }
+
+  /* ===== MENU DE ABAS ===== */
+  .tab-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 2px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .tab-btn {
+    padding: 8px 14px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: .7rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 4px 4px 0 0;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .tab-btn:hover {
+    color: var(--text-primary);
+    background: var(--bg-card);
+  }
+  .tab-btn.active {
+    color: var(--accent);
+    background: var(--accent-dim);
+    box-shadow: inset 0 -2px 0 var(--accent), 0 0 30px var(--accent-glow);
+  }
+
+  /* ===== CONTEÚDO DAS ABAS ===== */
+  .tab-content {
+    display: none;
+    animation: fadeInTab 0.4s ease;
+    padding: 4px 0;
+  }
+  .tab-content.active { display: block; }
+  @keyframes fadeInTab {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ===== PERFIL ===== */
+  .profile-grid {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 36px;
+    align-items: start;
+  }
+  .profile-side { text-align: center; }
+  .avatar-cyber {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    border: 2px solid var(--avatar-border);
+    background: var(--bg-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 0 60px var(--accent-glow);
+    position: relative;
+  }
+  .avatar-cyber img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .avatar-cyber .fallback {
+    font-family: 'Orbitron', monospace;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-shadow: 0 0 60px var(--accent-glow);
+  }
+  .avatar-cyber::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    animation: pulseRing 3s ease-in-out infinite;
+  }
+  @keyframes pulseRing {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.5; }
+  }
+
+  .profile-side h1 {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.3rem;
+    color: var(--text-heading);
+    letter-spacing: 1px;
+  }
+  .profile-side .role {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: .75rem;
+    color: var(--accent);
+    margin-top: 6px;
+    display: inline-block;
+    padding: 3px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    background: var(--bg-card);
+  }
+  .profile-side .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    padding: 4px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: .7rem;
+    color: var(--text-secondary);
+  }
+  .profile-side .status .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: blink 1.5s infinite;
+  }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
+
+  .profile-side .contact-links {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .profile-side .contact-links a {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: .75rem;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    transition: all 0.3s;
+    color: var(--text-secondary);
+  }
+  .profile-side .contact-links a:hover {
+    border-color: var(--border-color);
+    background: var(--bg-card);
+    color: var(--accent);
+    padding-left: 16px;
+  }
+
+  .profile-main h2 {
+    font-family: 'Orbitron', monospace;
+    font-size: .8rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+  }
+  .profile-main h2 .line {
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: var(--accent);
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .profile-main p {
+    font-size: .95rem;
+    color: var(--text-primary);
+    max-width: 58ch;
+    margin-bottom: 12px;
+  }
+  .profile-main p strong { color: var(--accent); }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .stat-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    text-align: center;
+    border-radius: 4px;
+    transition: all 0.3s;
+  }
+  .stat-item:hover { border-color: var(--accent); }
+  .stat-item .number {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.4rem;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .stat-item .label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: .6rem;
+    color: var(--text-secondary);
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== EXPERIÊNCIA ===== */
+  .exp-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 16px;
+    padding: 16px 0 16px 12px;
+    border-bottom: 1px solid var(--border-color);
+    border-left: 1px solid transparent;
+    transition: all 0.3s;
+  }
+  .exp-item:hover {
+    border-left-color: var(--accent);
+    background: var(--bg-card);
+    padding-left: 16px;
+  }
+  .exp-item .when {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: .7rem;
+    color: var(--text-secondary);
+    padding-top: 2px;
+  }
+  .exp-item h3 {
+    font-family: 'Orbitron', monospace;
+    font-size: .9rem;
+    color: var(--text-heading);
+    letter-spacing: 0.3px;
+  }
+  .exp-item .org {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: .75rem;
+    color: var(--accent);
+    margin-top: 2px;
+  }
+  .exp-item p { font-size: .88rem; color: var(--text-primary); margin-top: 4px; }
+  .exp-item ul { padding-left: 16px; margin-top: 4px; font-size: .85rem; color: var(--text-primary); }
+  .exp-item ul li { margin-bottom: 2px; }
+
+  /* ===== BADGES ===== */
+  .badge-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 8px;
+  }
+  .badge {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: .6rem;
+    padding: 2px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    color: var(--accent);
+    background: var(--bg-card);
+    transition: all 0.3s;
+  }
+  .badge:hover {
+    border-color: var(--accent);
+    background: var(--accent-dim);
+  }
+
+  /* ===== CERTIFICAÇÕES ===== */
+  .cert-item {
+    padding: 16px 0 16px 12px;
+    border-bottom: 1px solid var(--border-color);
+    border-left: 1px solid transparent;
+    transition: all 0.3s;
+  }
+  .cert-item:hover {
+    border-left-color: var(--accent);
+    background: var(--bg-card);
+    padding-left: 16px;
+  }
+  .cert-item h4 {
+    font-family: 'Orbitron', monospace;
+    font-size: .85rem;
+    color: var(--text-heading);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .cert-item h4 .cert-badge {
+    font-size: .6rem;
+    padding: 2px 8px;
+    border-radius: 2px;
+    background: var(--accent-dim);
+    color: var(--accent);
+    font-family: 'Share Tech Mono', monospace;
+    border: 1px solid var(--border-color);
+  }
+  .cert-item .meta {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: .7rem;
+    color: var(--text-secondary);
+    margin-top: 2px;
+  }
+  .cert-item p { font-size: .85rem; color: var(--text-primary); margin-top: 4px; }
+  
+  .cert-diploma-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    padding: 4px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    background: var(--bg-card);
+    color: var(--accent);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: .7rem;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .cert-diploma-btn:hover {
+    border-color: var(--accent);
+    background: var(--accent-dim);
+    box-shadow: 0 0 20px var(--accent-glow);
+  }
+  
+  /* ===== MODAL ===== */
+  .diploma-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .diploma-modal.active { display: flex; }
+  .diploma-modal-content {
+    background: var(--bg-primary);
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    max-width: 700px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 0 80px rgba(0,255,136,0.05);
+  }
+  .diploma-modal-content .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+    background: none;
+    border: none;
+    font-family: 'Share Tech Mono', monospace;
+    transition: all 0.3s;
+  }
+  .diploma-modal-content .close-btn:hover {
+    color: var(--accent);
+    transform: rotate(90deg);
+  }
+  .diploma-modal-content .diploma-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .diploma-modal-content .diploma-sub {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: .85rem;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+  }
+  .diploma-modal-content .diploma-body {
+    color: var(--text-primary);
+    font-size: .95rem;
+    line-height: 1.8;
+  }
+  .diploma-modal-content .diploma-body ul {
+    padding-left: 20px;
+    margin: 10px 0;
+  }
+  .diploma-modal-content .diploma-body ul li { margin-bottom: 4px; }
+  .diploma-modal-content .diploma-footer {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: .75rem;
+    color: var(--text-secondary);
+  }
+  .diploma-modal-content .diploma-footer a { color: var(--accent); }
+  .diploma-modal-content .diploma-footer a:hover { text-decoration: underline; }
+
+  /* ===== SKILLS ===== */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 20px;
+  }
+  .skill-cat h3 {
+    font-family: 'Orbitron', monospace;
+    font-size: .7rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 6px;
+  }
+  .skill-cat ul { list-style: none; }
+  .skill-cat ul li {
+    padding: 3px 0 3px 4px;
+    font-size: .85rem;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s;
+  }
+  .skill-cat ul li:hover {
+    color: var(--accent);
+    padding-left: 10px;
+  }
+
+  /* ===== SKILL BARS ===== */
+  .skill-bar { margin: 5px 0; }
+  .skill-bar .bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: .78rem;
+    color: var(--text-primary);
+  }
+  .skill-bar .bar-track {
+    height: 3px;
+    background: var(--border-color);
+    border-radius: 2px;
+    margin-top: 2px;
+    overflow: hidden;
+  }
+  .skill-bar .bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent));
+    border-radius: 2px;
+    width: 0%;
+    transition: width 1.5s ease;
+    box-shadow: 0 0 20px var(--accent-glow);
+  }
+
+  /* ===== CTA ===== */
+  .cta-cyber {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    text-align: center;
+    border-radius: 4px;
+    transition: all 0.3s;
+  }
+  .cta-cyber:hover { border-color: var(--accent); }
+  .cta-cyber p {
+    font-size: 1rem;
+    max-width: 50ch;
+    margin: 0 auto;
+    color: var(--text-primary);
+  }
+  .cta-cyber p strong { color: var(--accent); }
+  .cta-cyber .btn {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 8px 28px;
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    border-radius: 2px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: .8rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 0.5px;
+  }
+  .cta-cyber .btn:hover {
+    background: var(--accent);
+    color: var(--bg-primary);
+    box-shadow: 0 0 40px var(--accent-glow);
+    text-decoration: none;
+  }
+
+  /* ===== CONTACT CARDS ===== */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .contact-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 16px;
+    text-align: center;
+    border-radius: 4px;
+    transition: all 0.3s;
+  }
+  .contact-card:hover { border-color: var(--accent); }
+  .contact-card .icon { font-size: 1.6rem; margin-bottom: 4px; }
+  .contact-card .info {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: .7rem;
+    color: var(--text-primary);
+    word-break: break-all;
+  }
+  .contact-card .info a { color: var(--text-primary); }
+  .contact-card .info a:hover { color: var(--accent); }
+
+  /* ===== FOOTER ===== */
+  footer {
+    border-top: 1px solid var(--border-color);
+    padding: 20px 0 24px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: .7rem;
+    color: var(--text-secondary);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 32px;
+  }
+  footer .highlight { color: var(--accent); opacity: 0.3; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .container { padding: 76px 12px 20px; }
+    .top-bar { padding: 8px 12px; }
+    .top-bar .brand { font-size: .85rem; }
+    .top-bar select, .top-bar button { font-size: .65rem; padding: 4px 8px; min-height: 28px; }
+    .tab-btn { padding: 6px 10px; font-size: .6rem; }
+    .profile-grid { grid-template-columns: 1fr; gap: 20px; }
+    .profile-side { text-align: center; }
+    .avatar-cyber { width: 120px; height: 120px; }
+    .avatar-cyber .fallback { font-size: 2.4rem; }
+    .profile-side h1 { font-size: 1.1rem; }
+    .exp-item { grid-template-columns: 1fr; gap: 2px; padding-left: 8px; }
+    .exp-item:hover { padding-left: 12px; }
+    .exp-item .when { font-size: .65rem; color: var(--text-secondary); }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .stat-item .number { font-size: 1.2rem; }
+    .skills-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+    .contact-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .cta-cyber { padding: 20px; }
+    .cta-cyber p { font-size: .9rem; }
+    footer { font-size: .6rem; flex-direction: column; align-items: center; text-align: center; }
+    .diploma-modal-content { padding: 20px; margin: 10px; }
+    .diploma-modal-content .diploma-title { font-size: .95rem; }
+  }
+
+  @media (max-width: 480px) {
+    .container { padding: 72px 10px 16px; }
+    .top-bar .brand { font-size: .75rem; letter-spacing: 1px; }
+    .top-bar .controls { gap: 4px; }
+    .top-bar select, .top-bar button { font-size: .6rem; padding: 3px 6px; min-height: 26px; }
+    .tab-menu { gap: 1px; margin-bottom: 16px; }
+    .tab-btn { padding: 4px 8px; font-size: .55rem; }
+    .avatar-cyber { width: 100px; height: 100px; }
+    .avatar-cyber .fallback { font-size: 2rem; }
+    .profile-side h1 { font-size: 1rem; }
+    .profile-side .role { font-size: .65rem; }
+    .profile-main p { font-size: .85rem; }
+    .exp-item { padding: 10px 0 10px 6px; }
+    .exp-item h3 { font-size: .8rem; }
+    .exp-item ul { font-size: .8rem; padding-left: 12px; }
+    .skills-grid { grid-template-columns: 1fr; gap: 12px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 6px; }
+    .badge { font-size: .55rem; padding: 1px 8px; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+    .stat-item { padding: 8px; }
+    .stat-item .number { font-size: 1rem; }
+    .stat-item .label { font-size: .5rem; }
+    .cta-cyber { padding: 16px; }
+    .cta-cyber .btn { padding: 6px 20px; font-size: .7rem; }
+    .cert-item h4 { font-size: .78rem; }
+    .cert-item .meta { font-size: .65rem; }
+    .diploma-modal-content { padding: 16px; }
+    .diploma-modal-content .diploma-title { font-size: .85rem; }
+    .diploma-modal-content .diploma-body { font-size: .85rem; }
+  }
+
+  @media (max-width: 360px) {
+    .tab-btn { padding: 3px 6px; font-size: .5rem; }
+    .top-bar .brand { font-size: .65rem; }
+    .top-bar select, .top-bar button { font-size: .55rem; padding: 2px 5px; min-height: 22px; }
+    .avatar-cyber { width: 80px; height: 80px; }
+    .avatar-cyber .fallback { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== FUNDO CYBER ===== -->
+<div class="cyber-bg"></div>
+<div class="code-rain" id="codeRain"></div>
+<div class="glitch-overlay"></div>
+
+<!-- ===== TOP BAR ===== -->
+<header class="top-bar">
+  <div class="brand">RC<span>_</span>CYBER</div>
+  <div class="controls">
+    <select id="langSelect" aria-label="Idioma">
+      <option value="pt">🇵🇹 PT</option>
+      <option value="en">🇬🇧 EN</option>
+      <option value="es">🇪🇸 ES</option>
+    </select>
+    <button id="themeToggle" class="theme-btn" aria-label="Alternar tema">☀️</button>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- ===== MENU DE ABAS ===== -->
+  <nav class="tab-menu" role="tablist">
+    <button class="tab-btn active" data-tab="sobre" role="tab">📡 Sobre</button>
+    <button class="tab-btn" data-tab="experiencia" role="tab">⚡ Exp.</button>
+    <button class="tab-btn" data-tab="formacao" role="tab">📚 Form.</button>
+    <button class="tab-btn" data-tab="certificacoes" role="tab">🔐 Certs</button>
+    <button class="tab-btn" data-tab="competencias" role="tab">🎯 Skills</button>
+    <button class="tab-btn" data-tab="contacto" role="tab">📡 Cont.</button>
+  </nav>
+
+  <!-- ============================================================ -->
+  <!-- ABA: SOBRE -->
+  <!-- ============================================================ -->
+  <section class="tab-content active" id="tab-sobre" role="tabpanel">
+    <div class="profile-grid">
+      <div class="profile-side">
+        <div class="avatar-cyber">
+          <img src="https://media.licdn.com/dms/image/v2/D4E03AQF-2QKAGwHZnw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1700000000000?e=2147483647&v=beta&t=xxx" 
+               alt="Ricardo Carola" 
+               onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'fallback\'>RC</div>'">
+        </div>
+        <h1>Ricardo Carola</h1>
+        <div class="role">Analista em Cibersegurança Defensiva Avançada</div>
+        <div class="status"><span class="dot"></span><span>Disponível para oportunidades</span></div>
+        <div class="contact-links">
+          <a href="mailto:ricardocarola@gmail.com">✉ ricardocarola@gmail.com</a>
+          <a href="tel:+351910073423">📞 +351 910 073 423</a>
+          <a href="https://github.com/ricardocarola-cloud" target="_blank">🐙 GitHub</a>
+          <a href="https://linkedin.com/in/ricardo-carola-5b6a8bb0" target="_blank">🔗 LinkedIn</a>
+        </div>
+      </div>
+      <div class="profile-main">
+        <h2><span class="line"></span> Sobre</h2>
+        <p>Sou um profissional com <strong>24 anos de experiência militar</strong> na Marinha de Guerra Portuguesa, atualmente a exercer funções como <strong>Analista em Operações de Cibersegurança Defensiva Avançada</strong> no Estado-Maior-General das Forças Armadas.</p>
+        <p>Especialista em <strong>Comunicações e Sistemas de Informação</strong>, com formações avançadas em <strong>Ciberdefesa</strong> pela Academia Militar e pela Escola de Ciberdefesa. Paralelamente, sou <strong>Monitor/Instrutor de Educação Física</strong> certificado, com passagem pelas principais escolas de formação da Marinha. Atualmente frequento a <strong>Licenciatura em Engenharia Informática</strong> na Universidade Aberta.</p>
+        <p>Com experiência em <strong>SIEM, IDS/IPS, Análise Forense, Threat Intelligence e Resposta a Incidentes</strong>, estou comprometido com a proteção de infraestruturas críticas e a defesa do ciberespaço nacional.</p>
+
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="number">24</div>
+            <div class="label">Anos de Exp.</div>
+          </div>
+          <div class="stat-item">
+            <div class="number">12+</div>
+            <div class="label">Certificações</div>
+          </div>
+          <div class="stat-item">
+            <div class="number">4</div>
+            <div class="label">Idiomas</div>
+          </div>
+          <div class="stat-item">
+            <div class="number">∞</div>
+            <div class="label">Missões</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ABA: EXPERIÊNCIA -->
+  <!-- ============================================================ -->
+  <section class="tab-content" id="tab-experiencia" role="tabpanel">
+    <h2 style="font-family:'Orbitron',monospace;font-size:.8rem;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;">
+      <span class="line" style="display:inline-block;width:24px;height:1px;background:var(--accent);margin-right:10px;vertical-align:middle;"></span>
+      Experiência profissional
+    </h2>
+
+    <div class="exp-item">
+      <div class="when">2024 — atual</div>
+      <div>
+        <h3>Analista em Operações de Cibersegurança Defensiva Avançada</h3>
+        <div class="org">EMGFA · Lisboa</div>
+        <ul>
+          <li><strong>Monitorização Contínua:</strong> Vigilância 24/7, SIEM, IDS/IPS e firewalls avançados.</li>
+          <li><strong>Deteção e Análise:</strong> Triagem de alertas, forense digital e reconstrução de ataques.</li>
+          <li><strong>Resposta a Incidentes:</strong> Contenção, erradicação e coordenação com CNCS, NATO e UE.</li>
+          <li><strong>Threat Intelligence:</strong> Feeds de inteligência e análise de adversários.</li>
+        </ul>
+        <div class="badge-grid">
+          <span class="badge">SIEM</span><span class="badge">IDS/IPS</span>
+          <span class="badge">Forensics</span><span class="badge">Threat Intel</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="when">2002 — presente</div>
+      <div>
+        <h3>Operador de Comunicações e Sistemas de Informação</h3>
+        <div class="org">Marinha de Guerra Portuguesa · Lisboa</div>
+        <ul>
+          <li><strong>Operação de Sistemas:</strong> HF, VHF, UHF, SATCOM e sistemas táticos.</li>
+          <li><strong>COMSEC:</strong> Gestão de cifra e medidas EMCON.</li>
+          <li><strong>Manutenção Técnica:</strong> Diagnóstico e reparação de equipamentos.</li>
+          <li><strong>Missões:</strong> ATALANTA, TRIDENT JUNCTURE, JOINT WARRIOR.</li>
+        </ul>
+        <div class="badge-grid">
+          <span class="badge">SATCOM</span><span class="badge">COMSEC</span>
+          <span class="badge">NATO STANAG</span><span class="badge">Link 11/16/22</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="when">2011 — presente</div>
+      <div>
+        <h3>Monitor/Instrutor de Educação Física</h3>
+        <div class="org">Centro de Educação Física da Armada · Lisboa</div>
+        <ul>
+          <li><strong>Instrução:</strong> EF militar, natação utilitária e sobrevivência aquática.</li>
+          <li><strong>Avaliação:</strong> Testes de Aptidão Física (TAF) e controlo biométrico.</li>
+          <li><strong>Organização:</strong> Torneios internos e competições militares.</li>
+        </ul>
+        <div class="badge-grid">
+          <span class="badge">Preparação Física Militar</span>
+          <span class="badge">Natação Utilitária</span>
+          <span class="badge">Liderança</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="when">2021 — presente</div>
+      <div>
+        <h3>Técnico de Informática e Programação</h3>
+        <div class="org">Escola de Tecnologias Navais · Lisboa</div>
+        <ul>
+          <li>Programação (C, C++, Java, HTML, CSS, JavaScript)</li>
+          <li>Sistemas operativos (Windows e Linux)</li>
+          <li>Redes (LAN, protocolos, segurança)</li>
+        </ul>
+        <div class="badge-grid">
+          <span class="badge">C/C++</span><span class="badge">Java</span>
+          <span class="badge">Linux</span><span class="badge">Redes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ABA: FORMAÇÃO -->
+  <!-- ============================================================ -->
+  <section class="tab-content" id="tab-formacao" role="tabpanel">
+    <h2 style="font-family:'Orbitron',monospace;font-size:.8rem;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;">
+      <span class="line" style="display:inline-block;width:24px;height:1px;background:var(--accent);margin-right:10px;vertical-align:middle;"></span>
+      Formação académica
+    </h2>
+
+    <div class="exp-item">
+      <div class="when">2025 — presente</div>
+      <div>
+        <h3>Licenciatura em Engenharia Informática</h3>
+        <div class="org">Universidade Aberta · Lisboa</div>
+        <p>Frequência do 1º ano. Metodologia e-learning com foco em raciocínio lógico, comunicação técnica e rigor profissional.</p>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="when">2022 — 2023</div>
+      <div>
+        <h3>Curso de Operações em Ciberdefesa (CTeSP)</h3>
+        <div class="org">Instituto Politécnico de Beja · Lisboa</div>
+        <p>2440 horas. Módulos: Sistemas Operativos, Redes, Programação, Cibersegurança Defensiva/Ofensiva. Média: 15.11 valores.</p>
+        <div class="badge-grid">
+          <span class="badge">Python</span><span class="badge">Bash</span>
+          <span class="badge">Análise de Tráfego</span><span class="badge">Resposta a Incidentes</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="when">2021</div>
+      <div>
+        <h3>Técnico de Informática e Sistemas de Computação e Hardware</h3>
+        <div class="org">Escola de Tecnologias Navais · Lisboa</div>
+        <p>243 horas. Média: 16.92 valores. Certificado nº 0129/2021.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ABA: CERTIFICAÇÕES -->
+  <!-- ============================================================ -->
+  <section class="tab-content" id="tab-certificacoes" role="tabpanel">
+    <h2 style="font-family:'Orbitron',monospace;font-size:.8rem;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;">
+      <span class="line" style="display:inline-block;width:24px;height:1px;background:var(--accent);margin-right:10px;vertical-align:middle;"></span>
+      Certificações e Cursos Avançados
+    </h2>
+
+    <!-- CSCO -->
+    <div class="cert-item">
+      <h4>
+        CSCO — Certified SME Cyber Security Officer
+        <span class="cert-badge">📜 Diploma</span>
+      </h4>
+      <div class="meta">EU Cyber Academy · 06/02/2026 · ID: 6986058501c23a6b60010faa</div>
+      <p>Certificação europeia em cibersegurança para PME, abrangendo gestão de riscos, conformidade e proteção de ativos digitais.</p>
+      <div class="badge-grid">
+        <span class="badge">Cyber Security</span>
+        <span class="badge">Risk Management</span>
+        <span class="badge">Compliance</span>
+      </div>
+      <button class="cert-diploma-btn" onclick="openDiploma('cert1')">📄 Ver Diploma</button>
+    </div>
+
+    <!-- C)ITP -->
+    <div class="cert-item">
+      <h4>
+        C)ITP — Certified Information Technology Principles
+        <span class="cert-badge">📜 Diploma</span>
+      </h4>
+      <div class="meta">Mile2 · 01/09/2026 · ID: 28044-176-799-8775</div>
+      <p>Certificação internacional em princípios de tecnologias de informação, abrangendo fundamentos de TI, redes e segurança.</p>
+      <div class="badge-grid">
+        <span class="badge">IT Principles</span>
+        <span class="badge">Networking</span>
+        <span class="badge">Security</span>
+      </div>
+      <button class="cert-diploma-btn" onclick="openDiploma('cert2')">📄 Ver Diploma</button>
+    </div>
+
+    <!-- CSP -->
+    <div class="cert-item">
+      <h4>
+        CSP — Certified Security Principles
+        <span class="cert-badge">📜 Diploma</span>
+      </h4>
+      <div class="meta">Mile2 · Válido até 01/06/2029 · ID: 28044-17-6-7-8-0-0989</div>
+      <p>Certificação em princípios de segurança, abordando fundamentos de cibersegurança, gestão de riscos e melhores práticas.</p>
+      <div class="badge-grid">
+        <span class="badge">Security Principles</span>
+        <span class="badge">Risk Management</span>
+        <span class="badge">Best Practices</span>
+      </div>
+      <button class="cert-diploma-btn" onclick="openDiploma('cert3')">📄 Ver Diploma</button>
+    </div>
+
+    <!-- COFPS -->
+    <div class="cert-item">
+      <h4>
+        COFPS — Certified Online Fraud Prevention Specialist
+        <span class="cert-badge">📜 Diploma</span>
+      </h4>
+      <div class="meta">Hack & Fix · 28/06/2026 · ID: 2094-1322-5947-1486</div>
+      <p>Especialização em prevenção de fraudes online, deteção de atividades suspeitas e proteção de transações digitais.</p>
+      <div class="badge-grid">
+        <span class="badge">Fraud Prevention</span>
+        <span class="badge">Digital Security</span>
+        <span class="badge">Transaction Security</span>
+      </div>
+      <button class="cert-diploma-btn" onclick="openDiploma('cert4')">📄 Ver Diploma</button>
+    </div>
+
+    <!-- Cyber Security 101 -->
+    <div class="cert-item">
+      <h4>
+        Cyber Security 101 — Learning Path
+        <span class="cert-badge">📜 Diploma</span>
+      </h4>
+      <div class="meta">TryHackMe · 16/01/2026 · Duração: 45h 23min</div>
+      <p>Percurso formativo completo em cibersegurança, abrangendo fundamentos, redes, sistemas operativos e técnicas de ataque/defesa.</p>
+      <div class="badge-grid">
+        <span class="badge">Cyber Security</span>
+        <span class="badge">Networking</span>
+        <span class="badge">OS Security</span>
+      </div>
+      <button class="cert-diploma-btn" onclick="openDiploma('cert5')">📄 Ver Diploma</button>
+    </div>
+
+    <!-- Pre Security -->
+    <div class="cert-item">
+      <h4>
+        Pre Security — Learning Path
+        <span class="cert-badge">📜 Diploma</span>
+      </h4>
+      <div class="meta">TryHackMe · 06/11/2025 · Duração: 7h 38min</div>
+      <p>Curso introdutório de pré-segurança, abordando conceitos fundamentais de redes, sistemas e cibersegurança.</p>
+      <div class="badge-grid">
+        <span class="badge">Pre Security</span>
+        <span class="badge">Networking Basics</span>
+        <span class="badge">Cyber Fundamentals</span>
+      </div>
+      <button class="cert-diploma-btn" onclick="openDiploma('cert6')">📄 Ver Diploma</button>
+    </div>
+
+    <!-- Cyber Defender -->
+    <div class="cert-item">
+      <h4>
+        Cyber Defender Course — Operador de Ciberdefesa
+        <span class="cert-badge">📜 Diploma</span>
+      </h4>
+      <div class="meta">Academia Militar — CAIH · dez. 2024 - abr. 2025</div>
+      <p>450 horas operacionais com foco em Cyber Defense Operations, Incident Response & Forensic Analysis, Network & System Security.</p>
+      <div class="badge-grid">
+        <span class="badge">Incident Response</span>
+        <span class="badge">Forensics</span>
+        <span class="badge">Network Security</span>
+      </div>
+      <button class="cert-diploma-btn" onclick="openDiploma('cert7')">📄 Ver Diploma</button>
+    </div>
+
+    <!-- Cyber Operations -->
+    <div class="cert-item">
+      <h4>
+        Cyber Operations Course — Operações em Ciberdefesa
+        <span class="cert-badge">📜 Diploma</span>
+      </h4>
+      <div class="meta">Academia Militar — CAIH · out. 2025 - dez. 2025</div>
+      <p>Curso avançado em operações de ciberdefesa com foco em testes de penetração, descoberta de vulnerabilidades e exploração avançada.</p>
+      <div class="badge-grid">
+        <span class="badge">Penetration Testing</span>
+        <span class="badge">Vulnerability Discovery</span>
+        <span class="badge">Advanced Exploitation</span>
+      </div>
+      <button class="cert-diploma-btn" onclick="openDiploma('cert8')">📄 Ver Diploma</button>
+    </div>
+
+    <!-- Curso Avançado -->
+    <div class="cert-item">
+      <h4>
+        Curso Avançado de Operações em Ciberdefesa
+        <span class="cert-badge">📜 Diploma</span>
+      </h4>
+      <div class="meta">Escola de Tecnologias Navais — Escola de Ciberdefesa · set. 2023 - dez. 2023</div>
+      <p>420 horas. Ataques na Web, Segurança Ofensiva com MicroTik, Buffer Overflow, Obfuscação de Comunicações.</p>
+      <div class="badge-grid">
+        <span class="badge">Ethical Hacking</span>
+        <span class="badge">Web Attacks</span>
+        <span class="badge">Buffer Overflow</span>
+        <span class="badge">MicroTik</span>
+      </div>
+      <button class="cert-diploma-btn" onclick="openDiploma('cert9')">📄 Ver Diploma</button>
+    </div>
+
+    <!-- Mile2 -->
+    <div class="cert-item">
+      <h4>
+        Mile2 — Network Security & Defense
+        <span class="cert-badge">📜 Diploma</span>
+      </h4>
+      <div class="meta">Mile2 Cybersecurity Institute</div>
+      <p>Certificações internacionais em segurança de redes e defesa, threat intelligence e resposta a incidentes.</p>
+      <div class="badge-grid">
+        <span class="badge">Network Security</span>
+        <span class="badge">Threat Intelligence</span>
+        <span class="badge">Incident Response</span>
+      </div>
+      <button class="cert-diploma-btn" onclick="openDiploma('cert10')">📄 Ver Diploma</button>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ABA: COMPETÊNCIAS -->
+  <!-- ============================================================ -->
+  <section class="tab-content" id="tab-competencias" role="tabpanel">
+    <h2 style="font-family:'Orbitron',monospace;font-size:.8rem;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;">
+      <span class="line" style="display:inline-block;width:24px;height:1px;background:var(--accent);margin-right:10px;vertical-align:middle;"></span>
+      Competências
+    </h2>
+
+    <div class="skills-grid">
+      <div class="skill-cat">
+        <h3>🛡️ Cibersegurança</h3>
+        <ul>
+          <li>SIEM / IDS / IPS</li>
+          <li>Análise Forense Digital</li>
+          <li>Threat Intelligence</li>
+          <li>Vulnerability Assessment</li>
+          <li>Incident Response</li>
+          <li>Ethical Hacking</li>
+        </ul>
+      </div>
+      <div class="skill-cat">
+        <h3>📡 Redes e Comunicações</h3>
+        <ul>
+          <li>Redes HF / VHF / UHF / SATCOM</li>
+          <li>COMSEC / EMCON</li>
+          <li>Link 11/16/22</li>
+          <li>Firewalls Avançados</li>
+          <li>LAN / WAN</li>
+        </ul>
+      </div>
+      <div class="skill-cat">
+        <h3>💻 Programação</h3>
+        <ul>
+          <li>C / C++</li>
+          <li>Java</li>
+          <li>HTML / CSS / JavaScript</li>
+          <li>Python / Bash</li>
+          <li>SQL</li>
+        </ul>
+      </div>
+      <div class="skill-cat">
+        <h3>🌐 Idiomas</h3>
+        <ul>
+          <li>Português — Nativo</li>
+          <li>Inglês — B2 (Upper-Intermediate)</li>
+          <li>Francês — Intermédio</li>
+          <li>Espanhol — Intermédio</li>
+        </ul>
+      </div>
+      <div class="skill-cat">
+        <h3>🏋️ Desporto e Instrução</h3>
+        <ul>
+          <li>Preparação Física Militar</li>
+          <li>Natação Utilitária</li>
+          <li>Oficial de Desporto</li>
+          <li>Liderança e Trabalho de Equipa</li>
+        </ul>
+      </div>
+      <div class="skill-cat">
+        <h3>🎯 Interesses</h3>
+        <ul>
+          <li>Mergulho em Águas Abertas</li>
+          <li>Orientação Desportiva</li>
+          <li>Atletismo / Ciclismo</li>
+          <li>Natação / Voluntariado</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Orbitron',monospace;font-size:.7rem;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-top:32px;margin-bottom:12px;">⚡ Nível de Proficiência</h3>
+    <div class="skills-grid" style="grid-template-columns:1fr 1fr;">
+      <div>
+        <div class="skill-bar"><div class="bar-label"><span>Cibersegurança</span><span>95%</span></div><div class="bar-track"><div class="bar-fill" style="width:95%"></div></div></div>
+        <div class="skill-bar"><div class="bar-label"><span>Redes e Comunicações</span><span>90%</span></div><div class="bar-track"><div class="bar-fill" style="width:90%"></div></div></div>
+        <div class="skill-bar"><div class="bar-label"><span>Programação</span><span>75%</span></div><div class="bar-track"><div class="bar-fill" style="width:75%"></div></div></div>
+      </div>
+      <div>
+        <div class="skill-bar"><div class="bar-label"><span>Análise Forense</span><span>85%</span></div><div class="bar-track"><div class="bar-fill" style="width:85%"></div></div></div>
+        <div class="skill-bar"><div class="bar-label"><span>Resposta a Incidentes</span><span>88%</span></div><div class="bar-track"><div class="bar-fill" style="width:88%"></div></div></div>
+        <div class="skill-bar"><div class="bar-label"><span>Instrução Física</span><span>92%</span></div><div class="bar-track"><div class="bar-fill" style="width:92%"></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ABA: CONTACTO -->
+  <!-- ============================================================ -->
+  <section class="tab-content" id="tab-contacto" role="tabpanel">
+    <div class="cta-cyber">
+      <p><strong>📡 Vamos conversar?</strong><br>
+      Se estás à procura de um especialista em cibersegurança, comunicações navais ou instrução física, envia-me uma mensagem.</p>
+      <a href="mailto:ricardocarola@gmail.com" class="btn">✉ Enviar email</a>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="icon">📧</div>
+        <div class="info"><a href="mailto:ricardocarola@gmail.com">ricardocarola@gmail.com</a></div>
+      </div>
+      <div class="contact-card">
+        <div class="icon">📞</div>
+        <div class="info"><a href="tel:+351910073423">+351 910 073 423</a></div>
+      </div>
+      <div class="contact-card">
+        <div class="icon">🐙</div>
+        <div class="info"><a href="https://github.com/ricardocarola-cloud" target="_blank">github.com/ricardocarola-cloud</a></div>
+      </div>
+      <div class="contact-card">
+        <div class="icon">🔗</div>
+        <div class="info"><a href="https://linkedin.com/in/ricardo-carola-5b6a8bb0" target="_blank">linkedin.com/in/ricardo-carola</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <span>© 2026 Ricardo Carola</span>
+    <span class="highlight">◆</span>
+    <span>Cyber Portfolio · Built with HTML/CSS · GitHub Pages</span>
+  </footer>
+</div>
+
+<!-- ===== MODAL DE DIPLOMA ===== -->
+<div class="diploma-modal" id="diplomaModal">
+  <div class="diploma-modal-content">
+    <button class="close-btn" onclick="closeDiploma()">✕</button>
+    <div id="diplomaContent">
+      <!-- Conteúdo preenchido por JavaScript -->
+    </div>
+  </div>
+</div>
+
+<script>
   // ===== DADOS DOS DIPLOMAS COM LINKS PARA OS FICHEIROS ORIGINAIS =====
   const diplomas = {
     cert1: {
@@ -140,4 +1465,110 @@
       title: "Mile2 — Network Security & Defense",
       subtitle: "Mile2 Cybersecurity Institute",
       body: `
-        <p><strong>Certificações internacionais em segurança de redes e defesa.</strong></
+        <p><strong>Certificações internacionais em segurança de redes e defesa.</strong></p>
+        <ul>
+          <li><strong>Network Security:</strong> Segurança e defesa de redes</li>
+          <li><strong>Threat Intelligence:</strong> Inteligência de ameaças</li>
+          <li><strong>Incident Response:</strong> Resposta a incidentes</li>
+          <li><strong>Vulnerability Management:</strong> Gestão de vulnerabilidades</li>
+        </ul>
+        <p><strong>Competências adquiridas:</strong> Network Security, Threat Intelligence, Incident Response, Vulnerability Management</p>
+      `,
+      footer: 'Certificações emitidas pela Mile2 · <a href="#" target="_blank">📄 Ver certificado original</a>'
+    }
+  };
+
+  // ===== FUNÇÕES DO MODAL =====
+  function openDiploma(certId) {
+    const modal = document.getElementById('diplomaModal');
+    const content = document.getElementById('diplomaContent');
+    const data = diplomas[certId];
+    
+    if (data) {
+      content.innerHTML = `
+        <h2 class="diploma-title">📜 ${data.title}</h2>
+        <div class="diploma-sub">${data.subtitle}</div>
+        <div class="diploma-body">${data.body}</div>
+        <div class="diploma-footer">${data.footer}</div>
+      `;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeDiploma() {
+    const modal = document.getElementById('diplomaModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+
+  // Fechar modal ao clicar fora
+  document.getElementById('diplomaModal').addEventListener('click', function(e) {
+    if (e.target === this) closeDiploma();
+  });
+
+  // Fechar modal com ESC
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeDiploma();
+  });
+
+  // ===== CÓDIGO RAIN =====
+  (function createCodeRain() {
+    const container = document.getElementById('codeRain');
+    const chars = '0100110123456789ABCDEF';
+    for (let i = 0; i < 30; i++) {
+      const span = document.createElement('span');
+      const length = Math.floor(Math.random() * 12) + 4;
+      let text = '';
+      for (let j = 0; j < length; j++) {
+        text += chars[Math.floor(Math.random() * chars.length)];
+      }
+      span.textContent = text;
+      span.style.left = Math.random() * 100 + '%';
+      span.style.fontSize = (Math.random() * 8 + 10) + 'px';
+      span.style.animationDuration = (Math.random() * 15 + 10) + 's';
+      span.style.animationDelay = (Math.random() * 20) + 's';
+      span.style.opacity = Math.random() * 0.3 + 0.05;
+      container.appendChild(span);
+    }
+  })();
+
+  // ===== TEMA =====
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    document.getElementById('themeToggle').textContent = theme === 'dark' ? '☀️' : '🌙';
+    localStorage.setItem('pref-theme', theme);
+  }
+
+  document.getElementById('themeToggle').addEventListener('click', function() {
+    const current = document.documentElement.getAttribute('data-theme') || 'dark';
+    setTheme(current === 'dark' ? 'light' : 'dark');
+  });
+
+  // Carregar tema salvo
+  const savedTheme = localStorage.getItem('pref-theme') || 'dark';
+  setTheme(savedTheme);
+
+  // ===== TAB SYSTEM =====
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      this.classList.add('active');
+      const tabId = this.getAttribute('data-tab');
+      document.getElementById('tab-' + tabId).classList.add('active');
+    });
+  });
+
+  // ===== ANIMAÇÃO DAS BARRAS =====
+  setTimeout(() => {
+    document.querySelectorAll('.bar-fill').forEach(bar => {
+      const width = bar.style.width;
+      bar.style.width = '0%';
+      setTimeout(() => { bar.style.width = width; }, 100);
+    });
+  }, 500);
+</script>
+
+</body>
+</html>
