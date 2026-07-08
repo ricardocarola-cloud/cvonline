@@ -859,8 +859,8 @@
                onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'fallback\'>RC</div>'">
         </div>
         <h1>Ricardo Carola</h1>
-        <div class="role">Analista em Cibersegurança Defensiva Avançada</div>
-        <div class="status"><span class="dot"></span><span>Disponível para oportunidades</span></div>
+        <div class="role" id="roleText">Analista em Cibersegurança Defensiva Avançada</div>
+        <div class="status"><span class="dot"></span><span id="statusText">Disponível para oportunidades</span></div>
         <div class="contact-links">
           <a href="mailto:ricardocarola@gmail.com">✉ ricardocarola@gmail.com</a>
           <a href="tel:+351910073423">📞 +351 910 073 423</a>
@@ -869,27 +869,27 @@
         </div>
       </div>
       <div class="profile-main">
-        <h2><span class="line"></span> Sobre</h2>
-        <p>Sou um profissional com <strong>24 anos de experiência militar</strong> na Marinha de Guerra Portuguesa, atualmente a exercer funções como <strong>Analista em Operações de Cibersegurança Defensiva Avançada</strong> no Estado-Maior-General das Forças Armadas.</p>
-        <p>Especialista em <strong>Comunicações e Sistemas de Informação</strong>, com formações avançadas em <strong>Ciberdefesa</strong> pela Academia Militar e pela Escola de Ciberdefesa. Paralelamente, sou <strong>Monitor/Instrutor de Educação Física</strong> certificado, com passagem pelas principais escolas de formação da Marinha. Atualmente frequento a <strong>Licenciatura em Engenharia Informática</strong> na Universidade Aberta.</p>
-        <p>Com experiência em <strong>SIEM, IDS/IPS, Análise Forense, Threat Intelligence e Resposta a Incidentes</strong>, estou comprometido com a proteção de infraestruturas críticas e a defesa do ciberespaço nacional.</p>
+        <h2><span class="line"></span> <span id="sobreTitle">Sobre</span></h2>
+        <p id="sobreP1">Sou um profissional com <strong>24 anos de experiência militar</strong> na Marinha de Guerra Portuguesa, atualmente a exercer funções como <strong>Analista em Operações de Cibersegurança Defensiva Avançada</strong> no Estado-Maior-General das Forças Armadas.</p>
+        <p id="sobreP2">Especialista em <strong>Comunicações e Sistemas de Informação</strong>, com formações avançadas em <strong>Ciberdefesa</strong> pela Academia Militar e pela Escola de Ciberdefesa. Paralelamente, sou <strong>Monitor/Instrutor de Educação Física</strong> certificado, com passagem pelas principais escolas de formação da Marinha. Atualmente frequento a <strong>Licenciatura em Engenharia Informática</strong> na Universidade Aberta.</p>
+        <p id="sobreP3">Com experiência em <strong>SIEM, IDS/IPS, Análise Forense, Threat Intelligence e Resposta a Incidentes</strong>, estou comprometido com a proteção de infraestruturas críticas e a defesa do ciberespaço nacional.</p>
 
         <div class="stats-grid">
           <div class="stat-item">
             <div class="number">24</div>
-            <div class="label">Anos de Exp.</div>
+            <div class="label" id="statYears">Anos de Exp.</div>
           </div>
           <div class="stat-item">
             <div class="number">12+</div>
-            <div class="label">Certificações</div>
+            <div class="label" id="statCerts">Certificações</div>
           </div>
           <div class="stat-item">
             <div class="number">4</div>
-            <div class="label">Idiomas</div>
+            <div class="label" id="statLangs">Idiomas</div>
           </div>
           <div class="stat-item">
             <div class="number">∞</div>
-            <div class="label">Missões</div>
+            <div class="label" id="statMissions">Missões</div>
           </div>
         </div>
       </div>
@@ -902,19 +902,19 @@
   <section class="tab-content" id="tab-experiencia" role="tabpanel">
     <h2 style="font-family:'Orbitron',monospace;font-size:.8rem;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;">
       <span class="line" style="display:inline-block;width:24px;height:1px;background:var(--accent);margin-right:10px;vertical-align:middle;"></span>
-      Experiência profissional
+      <span id="expTitle">Experiência profissional</span>
     </h2>
 
     <div class="exp-item">
-      <div class="when">2024 — atual</div>
+      <div class="when" id="exp1When">2024 — atual</div>
       <div>
-        <h3>Analista em Operações de Cibersegurança Defensiva Avançada</h3>
-        <div class="org">EMGFA · Lisboa</div>
+        <h3 id="exp1Title">Analista em Operações de Cibersegurança Defensiva Avançada</h3>
+        <div class="org" id="exp1Org">EMGFA · Lisboa</div>
         <ul>
-          <li><strong>Monitorização Contínua:</strong> Vigilância 24/7, SIEM, IDS/IPS e firewalls avançados.</li>
-          <li><strong>Deteção e Análise:</strong> Triagem de alertas, forense digital e reconstrução de ataques.</li>
-          <li><strong>Resposta a Incidentes:</strong> Contenção, erradicação e coordenação com CNCS, NATO e UE.</li>
-          <li><strong>Threat Intelligence:</strong> Feeds de inteligência e análise de adversários.</li>
+          <li id="exp1L1"><strong>Monitorização Contínua:</strong> Vigilância 24/7, SIEM, IDS/IPS e firewalls avançados.</li>
+          <li id="exp1L2"><strong>Deteção e Análise:</strong> Triagem de alertas, forense digital e reconstrução de ataques.</li>
+          <li id="exp1L3"><strong>Resposta a Incidentes:</strong> Contenção, erradicação e coordenação com CNCS, NATO e UE.</li>
+          <li id="exp1L4"><strong>Threat Intelligence:</strong> Feeds de inteligência e análise de adversários.</li>
         </ul>
         <div class="badge-grid">
           <span class="badge">SIEM</span><span class="badge">IDS/IPS</span>
@@ -924,15 +924,15 @@
     </div>
 
     <div class="exp-item">
-      <div class="when">2002 — presente</div>
+      <div class="when" id="exp2When">2002 — presente</div>
       <div>
-        <h3>Operador de Comunicações e Sistemas de Informação</h3>
-        <div class="org">Marinha de Guerra Portuguesa · Lisboa</div>
+        <h3 id="exp2Title">Operador de Comunicações e Sistemas de Informação</h3>
+        <div class="org" id="exp2Org">Marinha de Guerra Portuguesa · Lisboa</div>
         <ul>
-          <li><strong>Operação de Sistemas:</strong> HF, VHF, UHF, SATCOM e sistemas táticos.</li>
-          <li><strong>COMSEC:</strong> Gestão de cifra e medidas EMCON.</li>
-          <li><strong>Manutenção Técnica:</strong> Diagnóstico e reparação de equipamentos.</li>
-          <li><strong>Missões:</strong> ATALANTA, TRIDENT JUNCTURE, JOINT WARRIOR.</li>
+          <li id="exp2L1"><strong>Operação de Sistemas:</strong> HF, VHF, UHF, SATCOM e sistemas táticos.</li>
+          <li id="exp2L2"><strong>COMSEC:</strong> Gestão de cifra e medidas EMCON.</li>
+          <li id="exp2L3"><strong>Manutenção Técnica:</strong> Diagnóstico e reparação de equipamentos.</li>
+          <li id="exp2L4"><strong>Missões:</strong> ATALANTA, TRIDENT JUNCTURE, JOINT WARRIOR.</li>
         </ul>
         <div class="badge-grid">
           <span class="badge">SATCOM</span><span class="badge">COMSEC</span>
@@ -942,14 +942,14 @@
     </div>
 
     <div class="exp-item">
-      <div class="when">2011 — presente</div>
+      <div class="when" id="exp3When">2011 — presente</div>
       <div>
-        <h3>Monitor/Instrutor de Educação Física</h3>
-        <div class="org">Centro de Educação Física da Armada · Lisboa</div>
+        <h3 id="exp3Title">Monitor/Instrutor de Educação Física</h3>
+        <div class="org" id="exp3Org">Centro de Educação Física da Armada · Lisboa</div>
         <ul>
-          <li><strong>Instrução:</strong> EF militar, natação utilitária e sobrevivência aquática.</li>
-          <li><strong>Avaliação:</strong> Testes de Aptidão Física (TAF) e controlo biométrico.</li>
-          <li><strong>Organização:</strong> Torneios internos e competições militares.</li>
+          <li id="exp3L1"><strong>Instrução:</strong> EF militar, natação utilitária e sobrevivência aquática.</li>
+          <li id="exp3L2"><strong>Avaliação:</strong> Testes de Aptidão Física (TAF) e controlo biométrico.</li>
+          <li id="exp3L3"><strong>Organização:</strong> Torneios internos e competições militares.</li>
         </ul>
         <div class="badge-grid">
           <span class="badge">Preparação Física Militar</span>
@@ -960,14 +960,14 @@
     </div>
 
     <div class="exp-item">
-      <div class="when">2021 — presente</div>
+      <div class="when" id="exp4When">2021 — presente</div>
       <div>
-        <h3>Técnico de Informática e Programação</h3>
-        <div class="org">Escola de Tecnologias Navais · Lisboa</div>
+        <h3 id="exp4Title">Técnico de Informática e Programação</h3>
+        <div class="org" id="exp4Org">Escola de Tecnologias Navais · Lisboa</div>
         <ul>
-          <li>Programação (C, C++, Java, HTML, CSS, JavaScript)</li>
-          <li>Sistemas operativos (Windows e Linux)</li>
-          <li>Redes (LAN, protocolos, segurança)</li>
+          <li id="exp4L1">Programação (C, C++, Java, HTML, CSS, JavaScript)</li>
+          <li id="exp4L2">Sistemas operativos (Windows e Linux)</li>
+          <li id="exp4L3">Redes (LAN, protocolos, segurança)</li>
         </ul>
         <div class="badge-grid">
           <span class="badge">C/C++</span><span class="badge">Java</span>
@@ -983,24 +983,24 @@
   <section class="tab-content" id="tab-formacao" role="tabpanel">
     <h2 style="font-family:'Orbitron',monospace;font-size:.8rem;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;">
       <span class="line" style="display:inline-block;width:24px;height:1px;background:var(--accent);margin-right:10px;vertical-align:middle;"></span>
-      Formação académica
+      <span id="formTitle">Formação académica</span>
     </h2>
 
     <div class="exp-item">
-      <div class="when">2025 — presente</div>
+      <div class="when" id="form1When">2025 — presente</div>
       <div>
-        <h3>Licenciatura em Engenharia Informática</h3>
-        <div class="org">Universidade Aberta · Lisboa</div>
-        <p>Frequência do 1º ano. Metodologia e-learning com foco em raciocínio lógico, comunicação técnica e rigor profissional.</p>
+        <h3 id="form1Title">Licenciatura em Engenharia Informática</h3>
+        <div class="org" id="form1Org">Universidade Aberta · Lisboa</div>
+        <p id="form1Desc">Frequência do 1º ano. Metodologia e-learning com foco em raciocínio lógico, comunicação técnica e rigor profissional.</p>
       </div>
     </div>
 
     <div class="exp-item">
-      <div class="when">2022 — 2023</div>
+      <div class="when" id="form2When">2022 — 2023</div>
       <div>
-        <h3>Curso de Operações em Ciberdefesa (CTeSP)</h3>
-        <div class="org">Instituto Politécnico de Beja · Lisboa</div>
-        <p>2440 horas. Módulos: Sistemas Operativos, Redes, Programação, Cibersegurança Defensiva/Ofensiva. Média: 15.11 valores.</p>
+        <h3 id="form2Title">Curso de Operações em Ciberdefesa (CTeSP)</h3>
+        <div class="org" id="form2Org">Instituto Politécnico de Beja · Lisboa</div>
+        <p id="form2Desc">2440 horas. Módulos: Sistemas Operativos, Redes, Programação, Cibersegurança Defensiva/Ofensiva. Média: 15.11 valores.</p>
         <div class="badge-grid">
           <span class="badge">Python</span><span class="badge">Bash</span>
           <span class="badge">Análise de Tráfego</span><span class="badge">Resposta a Incidentes</span>
@@ -1009,17 +1009,17 @@
     </div>
 
     <div class="exp-item">
-      <div class="when">2021</div>
+      <div class="when" id="form3When">2021</div>
       <div>
-        <h3>Técnico de Informática e Sistemas de Computação e Hardware</h3>
-        <div class="org">Escola de Tecnologias Navais · Lisboa</div>
-        <p>243 horas. Média: 16.92 valores. Certificado nº 0129/2021.</p>
+        <h3 id="form3Title">Técnico de Informática e Sistemas de Computação e Hardware</h3>
+        <div class="org" id="form3Org">Escola de Tecnologias Navais · Lisboa</div>
+        <p id="form3Desc">243 horas. Média: 16.92 valores. Certificado nº 0129/2021.</p>
       </div>
     </div>
   </section>
 
   <!-- ============================================================ -->
-  <!-- ABA: CERTIFICAÇÕES -->
+  <!-- ABA: CERTIFICAÇÕES (mantido igual) -->
   <!-- ============================================================ -->
   <section class="tab-content" id="tab-certificacoes" role="tabpanel">
     <h2 style="font-family:'Orbitron',monospace;font-size:.8rem;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;">
@@ -1027,163 +1027,102 @@
       Certificações e Cursos Avançados
     </h2>
 
-    <!-- CSCO -->
     <div class="cert-item">
-      <h4>
-        CSCO — Certified SME Cyber Security Officer
-        <span class="cert-badge">📜 Diploma</span>
-      </h4>
+      <h4>CSCO — Certified SME Cyber Security Officer <span class="cert-badge">📜 Diploma</span></h4>
       <div class="meta">EU Cyber Academy · 06/02/2026 · ID: 6986058501c23a6b60010faa</div>
       <p>Certificação europeia em cibersegurança para PME, abrangendo gestão de riscos, conformidade e proteção de ativos digitais.</p>
       <div class="badge-grid">
-        <span class="badge">Cyber Security</span>
-        <span class="badge">Risk Management</span>
-        <span class="badge">Compliance</span>
+        <span class="badge">Cyber Security</span><span class="badge">Risk Management</span><span class="badge">Compliance</span>
       </div>
       <button class="cert-diploma-btn" onclick="openDiploma('cert1')">📄 Ver Diploma</button>
     </div>
 
-    <!-- C)ITP -->
     <div class="cert-item">
-      <h4>
-        C)ITP — Certified Information Technology Principles
-        <span class="cert-badge">📜 Diploma</span>
-      </h4>
+      <h4>C)ITP — Certified Information Technology Principles <span class="cert-badge">📜 Diploma</span></h4>
       <div class="meta">Mile2 · 01/09/2026 · ID: 28044-176-799-8775</div>
       <p>Certificação internacional em princípios de tecnologias de informação, abrangendo fundamentos de TI, redes e segurança.</p>
       <div class="badge-grid">
-        <span class="badge">IT Principles</span>
-        <span class="badge">Networking</span>
-        <span class="badge">Security</span>
+        <span class="badge">IT Principles</span><span class="badge">Networking</span><span class="badge">Security</span>
       </div>
       <button class="cert-diploma-btn" onclick="openDiploma('cert2')">📄 Ver Diploma</button>
     </div>
 
-    <!-- CSP -->
     <div class="cert-item">
-      <h4>
-        CSP — Certified Security Principles
-        <span class="cert-badge">📜 Diploma</span>
-      </h4>
+      <h4>CSP — Certified Security Principles <span class="cert-badge">📜 Diploma</span></h4>
       <div class="meta">Mile2 · Válido até 01/06/2029 · ID: 28044-17-6-7-8-0-0989</div>
       <p>Certificação em princípios de segurança, abordando fundamentos de cibersegurança, gestão de riscos e melhores práticas.</p>
       <div class="badge-grid">
-        <span class="badge">Security Principles</span>
-        <span class="badge">Risk Management</span>
-        <span class="badge">Best Practices</span>
+        <span class="badge">Security Principles</span><span class="badge">Risk Management</span><span class="badge">Best Practices</span>
       </div>
       <button class="cert-diploma-btn" onclick="openDiploma('cert3')">📄 Ver Diploma</button>
     </div>
 
-    <!-- COFPS -->
     <div class="cert-item">
-      <h4>
-        COFPS — Certified Online Fraud Prevention Specialist
-        <span class="cert-badge">📜 Diploma</span>
-      </h4>
+      <h4>COFPS — Certified Online Fraud Prevention Specialist <span class="cert-badge">📜 Diploma</span></h4>
       <div class="meta">Hack & Fix · 28/06/2026 · ID: 2094-1322-5947-1486</div>
       <p>Especialização em prevenção de fraudes online, deteção de atividades suspeitas e proteção de transações digitais.</p>
       <div class="badge-grid">
-        <span class="badge">Fraud Prevention</span>
-        <span class="badge">Digital Security</span>
-        <span class="badge">Transaction Security</span>
+        <span class="badge">Fraud Prevention</span><span class="badge">Digital Security</span><span class="badge">Transaction Security</span>
       </div>
       <button class="cert-diploma-btn" onclick="openDiploma('cert4')">📄 Ver Diploma</button>
     </div>
 
-    <!-- Cyber Security 101 -->
     <div class="cert-item">
-      <h4>
-        Cyber Security 101 — Learning Path
-        <span class="cert-badge">📜 Diploma</span>
-      </h4>
+      <h4>Cyber Security 101 — Learning Path <span class="cert-badge">📜 Diploma</span></h4>
       <div class="meta">TryHackMe · 16/01/2026 · Duração: 45h 23min</div>
       <p>Percurso formativo completo em cibersegurança, abrangendo fundamentos, redes, sistemas operativos e técnicas de ataque/defesa.</p>
       <div class="badge-grid">
-        <span class="badge">Cyber Security</span>
-        <span class="badge">Networking</span>
-        <span class="badge">OS Security</span>
+        <span class="badge">Cyber Security</span><span class="badge">Networking</span><span class="badge">OS Security</span>
       </div>
       <button class="cert-diploma-btn" onclick="openDiploma('cert5')">📄 Ver Diploma</button>
     </div>
 
-    <!-- Pre Security -->
     <div class="cert-item">
-      <h4>
-        Pre Security — Learning Path
-        <span class="cert-badge">📜 Diploma</span>
-      </h4>
+      <h4>Pre Security — Learning Path <span class="cert-badge">📜 Diploma</span></h4>
       <div class="meta">TryHackMe · 06/11/2025 · Duração: 7h 38min</div>
       <p>Curso introdutório de pré-segurança, abordando conceitos fundamentais de redes, sistemas e cibersegurança.</p>
       <div class="badge-grid">
-        <span class="badge">Pre Security</span>
-        <span class="badge">Networking Basics</span>
-        <span class="badge">Cyber Fundamentals</span>
+        <span class="badge">Pre Security</span><span class="badge">Networking Basics</span><span class="badge">Cyber Fundamentals</span>
       </div>
       <button class="cert-diploma-btn" onclick="openDiploma('cert6')">📄 Ver Diploma</button>
     </div>
 
-    <!-- Cyber Defender -->
     <div class="cert-item">
-      <h4>
-        Cyber Defender Course — Operador de Ciberdefesa
-        <span class="cert-badge">📜 Diploma</span>
-      </h4>
+      <h4>Cyber Defender Course — Operador de Ciberdefesa <span class="cert-badge">📜 Diploma</span></h4>
       <div class="meta">Academia Militar — CAIH · dez. 2024 - abr. 2025</div>
       <p>450 horas operacionais com foco em Cyber Defense Operations, Incident Response & Forensic Analysis, Network & System Security.</p>
       <div class="badge-grid">
-        <span class="badge">Incident Response</span>
-        <span class="badge">Forensics</span>
-        <span class="badge">Network Security</span>
+        <span class="badge">Incident Response</span><span class="badge">Forensics</span><span class="badge">Network Security</span>
       </div>
       <button class="cert-diploma-btn" onclick="openDiploma('cert7')">📄 Ver Diploma</button>
     </div>
 
-    <!-- Cyber Operations -->
     <div class="cert-item">
-      <h4>
-        Cyber Operations Course — Operações em Ciberdefesa
-        <span class="cert-badge">📜 Diploma</span>
-      </h4>
+      <h4>Cyber Operations Course — Operações em Ciberdefesa <span class="cert-badge">📜 Diploma</span></h4>
       <div class="meta">Academia Militar — CAIH · out. 2025 - dez. 2025</div>
       <p>Curso avançado em operações de ciberdefesa com foco em testes de penetração, descoberta de vulnerabilidades e exploração avançada.</p>
       <div class="badge-grid">
-        <span class="badge">Penetration Testing</span>
-        <span class="badge">Vulnerability Discovery</span>
-        <span class="badge">Advanced Exploitation</span>
+        <span class="badge">Penetration Testing</span><span class="badge">Vulnerability Discovery</span><span class="badge">Advanced Exploitation</span>
       </div>
       <button class="cert-diploma-btn" onclick="openDiploma('cert8')">📄 Ver Diploma</button>
     </div>
 
-    <!-- Curso Avançado -->
     <div class="cert-item">
-      <h4>
-        Curso Avançado de Operações em Ciberdefesa
-        <span class="cert-badge">📜 Diploma</span>
-      </h4>
+      <h4>Curso Avançado de Operações em Ciberdefesa <span class="cert-badge">📜 Diploma</span></h4>
       <div class="meta">Escola de Tecnologias Navais — Escola de Ciberdefesa · set. 2023 - dez. 2023</div>
       <p>420 horas. Ataques na Web, Segurança Ofensiva com MicroTik, Buffer Overflow, Obfuscação de Comunicações.</p>
       <div class="badge-grid">
-        <span class="badge">Ethical Hacking</span>
-        <span class="badge">Web Attacks</span>
-        <span class="badge">Buffer Overflow</span>
-        <span class="badge">MicroTik</span>
+        <span class="badge">Ethical Hacking</span><span class="badge">Web Attacks</span><span class="badge">Buffer Overflow</span><span class="badge">MicroTik</span>
       </div>
       <button class="cert-diploma-btn" onclick="openDiploma('cert9')">📄 Ver Diploma</button>
     </div>
 
-    <!-- Mile2 -->
     <div class="cert-item">
-      <h4>
-        Mile2 — Network Security & Defense
-        <span class="cert-badge">📜 Diploma</span>
-      </h4>
+      <h4>Mile2 — Network Security & Defense <span class="cert-badge">📜 Diploma</span></h4>
       <div class="meta">Mile2 Cybersecurity Institute</div>
       <p>Certificações internacionais em segurança de redes e defesa, threat intelligence e resposta a incidentes.</p>
       <div class="badge-grid">
-        <span class="badge">Network Security</span>
-        <span class="badge">Threat Intelligence</span>
-        <span class="badge">Incident Response</span>
+        <span class="badge">Network Security</span><span class="badge">Threat Intelligence</span><span class="badge">Incident Response</span>
       </div>
       <button class="cert-diploma-btn" onclick="openDiploma('cert10')">📄 Ver Diploma</button>
     </div>
@@ -1195,7 +1134,7 @@
   <section class="tab-content" id="tab-competencias" role="tabpanel">
     <h2 style="font-family:'Orbitron',monospace;font-size:.8rem;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;">
       <span class="line" style="display:inline-block;width:24px;height:1px;background:var(--accent);margin-right:10px;vertical-align:middle;"></span>
-      Competências
+      <span id="skillsTitle">Competências</span>
     </h2>
 
     <div class="skills-grid">
@@ -1233,10 +1172,10 @@
       <div class="skill-cat">
         <h3>🌐 Idiomas</h3>
         <ul>
-          <li>Português — Nativo</li>
-          <li>Inglês — B2 (Upper-Intermediate)</li>
-          <li>Francês — Intermédio</li>
-          <li>Espanhol — Intermédio</li>
+          <li id="langPt">Português — Nativo</li>
+          <li id="langEn">Inglês — B2 (Upper-Intermediate)</li>
+          <li id="langFr">Francês — Intermédio</li>
+          <li id="langEs">Espanhol — Intermédio</li>
         </ul>
       </div>
       <div class="skill-cat">
@@ -1279,9 +1218,9 @@
   <!-- ============================================================ -->
   <section class="tab-content" id="tab-contacto" role="tabpanel">
     <div class="cta-cyber">
-      <p><strong>📡 Vamos conversar?</strong><br>
-      Se estás à procura de um especialista em cibersegurança, comunicações navais ou instrução física, envia-me uma mensagem.</p>
-      <a href="mailto:ricardocarola@gmail.com" class="btn">✉ Enviar email</a>
+      <p><strong id="ctaTitle">📡 Vamos conversar?</strong><br>
+      <span id="ctaDesc">Se estás à procura de um especialista em cibersegurança, comunicações navais ou instrução física, envia-me uma mensagem.</span></p>
+      <a href="mailto:ricardocarola@gmail.com" class="btn" id="ctaBtn">✉ Enviar email</a>
     </div>
 
     <div class="contact-grid">
@@ -1308,7 +1247,7 @@
   <footer>
     <span>© 2026 Ricardo Carola</span>
     <span class="highlight">◆</span>
-    <span>Cyber Portfolio · Built with HTML/CSS · GitHub Pages</span>
+    <span id="footerText">Cyber Portfolio · Built with HTML/CSS · GitHub Pages</span>
   </footer>
 </div>
 
@@ -1316,14 +1255,270 @@
 <div class="diploma-modal" id="diplomaModal">
   <div class="diploma-modal-content">
     <button class="close-btn" onclick="closeDiploma()">✕</button>
-    <div id="diplomaContent">
-      <!-- Conteúdo preenchido por JavaScript -->
-    </div>
+    <div id="diplomaContent"></div>
   </div>
 </div>
 
 <script>
-  // ===== DADOS DOS DIPLOMAS COM LINKS PARA OS FICHEIROS ORIGINAIS =====
+  // ===== TRADUÇÕES =====
+  const translations = {
+    pt: {
+      role: "Analista em Cibersegurança Defensiva Avançada",
+      status: "Disponível para oportunidades",
+      footer: "Cyber Portfolio · Feito com HTML/CSS · GitHub Pages",
+      sobre: "Sobre",
+      sobreP1: 'Sou um profissional com <strong>24 anos de experiência militar</strong> na Marinha de Guerra Portuguesa, atualmente a exercer funções como <strong>Analista em Operações de Cibersegurança Defensiva Avançada</strong> no Estado-Maior-General das Forças Armadas.',
+      sobreP2: 'Especialista em <strong>Comunicações e Sistemas de Informação</strong>, com formações avançadas em <strong>Ciberdefesa</strong> pela Academia Militar e pela Escola de Ciberdefesa. Paralelamente, sou <strong>Monitor/Instrutor de Educação Física</strong> certificado, com passagem pelas principais escolas de formação da Marinha. Atualmente frequento a <strong>Licenciatura em Engenharia Informática</strong> na Universidade Aberta.',
+      sobreP3: 'Com experiência em <strong>SIEM, IDS/IPS, Análise Forense, Threat Intelligence e Resposta a Incidentes</strong>, estou comprometido com a proteção de infraestruturas críticas e a defesa do ciberespaço nacional.',
+      statYears: "Anos de Exp.",
+      statCerts: "Certificações",
+      statLangs: "Idiomas",
+      statMissions: "Missões",
+      expTitle: "Experiência profissional",
+      exp1When: "2024 — atual",
+      exp1Title: "Analista em Operações de Cibersegurança Defensiva Avançada",
+      exp1Org: "EMGFA · Lisboa",
+      exp1L1: "<strong>Monitorização Contínua:</strong> Vigilância 24/7, SIEM, IDS/IPS e firewalls avançados.",
+      exp1L2: "<strong>Deteção e Análise:</strong> Triagem de alertas, forense digital e reconstrução de ataques.",
+      exp1L3: "<strong>Resposta a Incidentes:</strong> Contenção, erradicação e coordenação com CNCS, NATO e UE.",
+      exp1L4: "<strong>Threat Intelligence:</strong> Feeds de inteligência e análise de adversários.",
+      exp2When: "2002 — presente",
+      exp2Title: "Operador de Comunicações e Sistemas de Informação",
+      exp2Org: "Marinha de Guerra Portuguesa · Lisboa",
+      exp2L1: "<strong>Operação de Sistemas:</strong> HF, VHF, UHF, SATCOM e sistemas táticos.",
+      exp2L2: "<strong>COMSEC:</strong> Gestão de cifra e medidas EMCON.",
+      exp2L3: "<strong>Manutenção Técnica:</strong> Diagnóstico e reparação de equipamentos.",
+      exp2L4: "<strong>Missões:</strong> ATALANTA, TRIDENT JUNCTURE, JOINT WARRIOR.",
+      exp3When: "2011 — presente",
+      exp3Title: "Monitor/Instrutor de Educação Física",
+      exp3Org: "Centro de Educação Física da Armada · Lisboa",
+      exp3L1: "<strong>Instrução:</strong> EF militar, natação utilitária e sobrevivência aquática.",
+      exp3L2: "<strong>Avaliação:</strong> Testes de Aptidão Física (TAF) e controlo biométrico.",
+      exp3L3: "<strong>Organização:</strong> Torneios internos e competições militares.",
+      exp4When: "2021 — presente",
+      exp4Title: "Técnico de Informática e Programação",
+      exp4Org: "Escola de Tecnologias Navais · Lisboa",
+      exp4L1: "Programação (C, C++, Java, HTML, CSS, JavaScript)",
+      exp4L2: "Sistemas operativos (Windows e Linux)",
+      exp4L3: "Redes (LAN, protocolos, segurança)",
+      formTitle: "Formação académica",
+      form1When: "2025 — presente",
+      form1Title: "Licenciatura em Engenharia Informática",
+      form1Org: "Universidade Aberta · Lisboa",
+      form1Desc: "Frequência do 1º ano. Metodologia e-learning com foco em raciocínio lógico, comunicação técnica e rigor profissional.",
+      form2When: "2022 — 2023",
+      form2Title: "Curso de Operações em Ciberdefesa (CTeSP)",
+      form2Org: "Instituto Politécnico de Beja · Lisboa",
+      form2Desc: "2440 horas. Módulos: Sistemas Operativos, Redes, Programação, Cibersegurança Defensiva/Ofensiva. Média: 15.11 valores.",
+      form3When: "2021",
+      form3Title: "Técnico de Informática e Sistemas de Computação e Hardware",
+      form3Org: "Escola de Tecnologias Navais · Lisboa",
+      form3Desc: "243 horas. Média: 16.92 valores. Certificado nº 0129/2021.",
+      skillsTitle: "Competências",
+      langPt: "Português — Nativo",
+      langEn: "Inglês — B2 (Upper-Intermediate)",
+      langFr: "Francês — Intermédio",
+      langEs: "Espanhol — Intermédio",
+      ctaTitle: "📡 Vamos conversar?",
+      ctaDesc: "Se estás à procura de um especialista em cibersegurança, comunicações navais ou instrução física, envia-me uma mensagem.",
+      ctaBtn: "✉ Enviar email"
+    },
+    en: {
+      role: "Advanced Defensive Cybersecurity Operations Analyst",
+      status: "Available for opportunities",
+      footer: "Cyber Portfolio · Built with HTML/CSS · GitHub Pages",
+      sobre: "About",
+      sobreP1: 'I am a professional with <strong>24 years of military experience</strong> in the Portuguese Navy, currently working as an <strong>Advanced Defensive Cybersecurity Operations Analyst</strong> at the Portuguese Armed Forces General Staff.',
+      sobreP2: 'Specialist in <strong>Communications and Information Systems</strong>, with advanced training in <strong>Cyber Defense</strong> by the Military Academy and the Cyber Defense School. Additionally, I am a certified <strong>Physical Education Monitor/Instructor</strong>, with experience in the Navy\'s main training schools. I am currently attending a <strong>Bachelor\'s Degree in Computer Engineering</strong> at Universidade Aberta.',
+      sobreP3: 'With experience in <strong>SIEM, IDS/IPS, Digital Forensics, Threat Intelligence and Incident Response</strong>, I am committed to protecting critical infrastructures and defending national cyberspace.',
+      statYears: "Years Exp.",
+      statCerts: "Certifications",
+      statLangs: "Languages",
+      statMissions: "Missions",
+      expTitle: "Professional Experience",
+      exp1When: "2024 — present",
+      exp1Title: "Advanced Defensive Cybersecurity Operations Analyst",
+      exp1Org: "EMGFA · Lisbon",
+      exp1L1: "<strong>Continuous Monitoring:</strong> 24/7 surveillance, SIEM, IDS/IPS and advanced firewalls.",
+      exp1L2: "<strong>Detection & Analysis:</strong> Alert triage, digital forensics and attack reconstruction.",
+      exp1L3: "<strong>Incident Response:</strong> Containment, eradication and coordination with CNCS, NATO and EU.",
+      exp1L4: "<strong>Threat Intelligence:</strong> Intelligence feeds and adversary analysis.",
+      exp2When: "2002 — present",
+      exp2Title: "Communications and Information Systems Operator",
+      exp2Org: "Portuguese Navy · Lisbon",
+      exp2L1: "<strong>Systems Operation:</strong> HF, VHF, UHF, SATCOM and tactical systems.",
+      exp2L2: "<strong>COMSEC:</strong> Cipher management and EMCON measures.",
+      exp2L3: "<strong>Technical Maintenance:</strong> Diagnostics and repair of equipment.",
+      exp2L4: "<strong>Missions:</strong> ATALANTA, TRIDENT JUNCTURE, JOINT WARRIOR.",
+      exp3When: "2011 — present",
+      exp3Title: "Physical Education Monitor/Instructor",
+      exp3Org: "Navy Physical Education Center · Lisbon",
+      exp3L1: "<strong>Instruction:</strong> Military PE, utility swimming and aquatic survival.",
+      exp3L2: "<strong>Assessment:</strong> Physical Fitness Tests (TAF) and biometric control.",
+      exp3L3: "<strong>Organization:</strong> Internal tournaments and military competitions.",
+      exp4When: "2021 — present",
+      exp4Title: "Computer Technician and Programming",
+      exp4Org: "Naval Technologies School · Lisbon",
+      exp4L1: "Programming (C, C++, Java, HTML, CSS, JavaScript)",
+      exp4L2: "Operating systems (Windows and Linux)",
+      exp4L3: "Networks (LAN, protocols, security)",
+      formTitle: "Education",
+      form1When: "2025 — present",
+      form1Title: "Bachelor's Degree in Computer Engineering",
+      form1Org: "Universidade Aberta · Lisbon",
+      form1Desc: "1st year. E-learning methodology focusing on logical reasoning, technical communication and professional rigor.",
+      form2When: "2022 — 2023",
+      form2Title: "Cyber Defense Operations Course (CTeSP)",
+      form2Org: "Polytechnic Institute of Beja · Lisbon",
+      form2Desc: "2440 hours. Modules: Operating Systems, Networks, Programming, Defensive/Offensive Cybersecurity. Average: 15.11.",
+      form3When: "2021",
+      form3Title: "Computer Technician and Computer Systems and Hardware",
+      form3Org: "Naval Technologies School · Lisbon",
+      form3Desc: "243 hours. Average: 16.92. Certificate nº 0129/2021.",
+      skillsTitle: "Skills",
+      langPt: "Portuguese — Native",
+      langEn: "English — B2 (Upper-Intermediate)",
+      langFr: "French — Intermediate",
+      langEs: "Spanish — Intermediate",
+      ctaTitle: "📡 Let's talk?",
+      ctaDesc: "If you are looking for a specialist in cybersecurity, naval communications or physical instruction, send me a message.",
+      ctaBtn: "✉ Send email"
+    },
+    es: {
+      role: "Analista de Operaciones de Ciberseguridad Defensiva Avanzada",
+      status: "Disponible para oportunidades",
+      footer: "Cyber Portfolio · Hecho con HTML/CSS · GitHub Pages",
+      sobre: "Sobre mí",
+      sobreP1: 'Soy un profesional con <strong>24 años de experiencia militar</strong> en la Marina de Guerra Portuguesa, actualmente ejerciendo como <strong>Analista de Operaciones de Ciberseguridad Defensiva Avanzada</strong> en el Estado Mayor General de las Fuerzas Armadas.',
+      sobreP2: 'Especialista en <strong>Comunicaciones y Sistemas de Información</strong>, con formaciones avanzadas en <strong>Ciberdefensa</strong> por la Academia Militar y la Escuela de Ciberdefensa. Paralelamente, soy <strong>Monitor/Instructor de Educación Física</strong> certificado, con paso por las principales escuelas de formación de la Marina. Actualmente curso la <strong>Licenciatura en Ingeniería Informática</strong> en la Universidade Aberta.',
+      sobreP3: 'Con experiencia en <strong>SIEM, IDS/IPS, Forense Digital, Threat Intelligence y Respuesta a Incidentes</strong>, estoy comprometido con la protección de infraestructuras críticas y la defensa del ciberespacio nacional.',
+      statYears: "Años Exp.",
+      statCerts: "Certificaciones",
+      statLangs: "Idiomas",
+      statMissions: "Misiones",
+      expTitle: "Experiencia profesional",
+      exp1When: "2024 — actual",
+      exp1Title: "Analista de Operaciones de Ciberseguridad Defensiva Avanzada",
+      exp1Org: "EMGFA · Lisboa",
+      exp1L1: "<strong>Monitorización Continua:</strong> Vigilancia 24/7, SIEM, IDS/IPS y firewalls avanzados.",
+      exp1L2: "<strong>Detección y Análisis:</strong> Triaje de alertas, forense digital y reconstrucción de ataques.",
+      exp1L3: "<strong>Respuesta a Incidentes:</strong> Contención, erradicación y coordinación con CNCS, OTAN y UE.",
+      exp1L4: "<strong>Threat Intelligence:</strong> Feeds de inteligencia y análisis de adversarios.",
+      exp2When: "2002 — actual",
+      exp2Title: "Operador de Comunicaciones y Sistemas de Información",
+      exp2Org: "Marina de Guerra Portuguesa · Lisboa",
+      exp2L1: "<strong>Operación de Sistemas:</strong> HF, VHF, UHF, SATCOM y sistemas tácticos.",
+      exp2L2: "<strong>COMSEC:</strong> Gestión de cifra y medidas EMCON.",
+      exp2L3: "<strong>Mantenimiento Técnico:</strong> Diagnóstico y reparación de equipos.",
+      exp2L4: "<strong>Misiones:</strong> ATALANTA, TRIDENT JUNCTURE, JOINT WARRIOR.",
+      exp3When: "2011 — actual",
+      exp3Title: "Monitor/Instructor de Educación Física",
+      exp3Org: "Centro de Educación Física de la Armada · Lisboa",
+      exp3L1: "<strong>Instrucción:</strong> EF militar, natación utilitaria y supervivencia acuática.",
+      exp3L2: "<strong>Evaluación:</strong> Pruebas de Aptitud Física (TAF) y control biométrico.",
+      exp3L3: "<strong>Organización:</strong> Torneos internos y competiciones militares.",
+      exp4When: "2021 — actual",
+      exp4Title: "Técnico de Informática y Programación",
+      exp4Org: "Escuela de Tecnologías Navales · Lisboa",
+      exp4L1: "Programación (C, C++, Java, HTML, CSS, JavaScript)",
+      exp4L2: "Sistemas operativos (Windows y Linux)",
+      exp4L3: "Redes (LAN, protocolos, seguridad)",
+      formTitle: "Formación académica",
+      form1When: "2025 — actual",
+      form1Title: "Licenciatura en Ingeniería Informática",
+      form1Org: "Universidade Aberta · Lisboa",
+      form1Desc: "Frecuencia del 1º año. Metodología e-learning con enfoque en razonamiento lógico, comunicación técnica y rigor profesional.",
+      form2When: "2022 — 2023",
+      form2Title: "Curso de Operaciones en Ciberdefensa (CTeSP)",
+      form2Org: "Instituto Politécnico de Beja · Lisboa",
+      form2Desc: "2440 horas. Módulos: Sistemas Operativos, Redes, Programación, Ciberseguridad Defensiva/Ofensiva. Media: 15.11.",
+      form3When: "2021",
+      form3Title: "Técnico de Informática y Sistemas de Computación y Hardware",
+      form3Org: "Escuela de Tecnologías Navales · Lisboa",
+      form3Desc: "243 horas. Media: 16.92. Certificado nº 0129/2021.",
+      skillsTitle: "Competencias",
+      langPt: "Portugués — Nativo",
+      langEn: "Inglés — B2 (Intermedio-Alto)",
+      langFr: "Francés — Intermedio",
+      langEs: "Español — Intermedio",
+      ctaTitle: "📡 ¿Hablamos?",
+      ctaDesc: "Si buscas un especialista en ciberseguridad, comunicaciones navales o instrucción física, envíame un mensaje.",
+      ctaBtn: "✉ Enviar email"
+    }
+  };
+
+  // ===== FUNÇÃO PARA ALTERAR IDIOMA =====
+  function setLanguage(lang) {
+    const t = translations[lang];
+    if (!t) return;
+    
+    document.getElementById('roleText').textContent = t.role;
+    document.getElementById('statusText').textContent = t.status;
+    document.getElementById('footerText').textContent = t.footer;
+    document.getElementById('sobreTitle').textContent = t.sobre;
+    document.getElementById('sobreP1').innerHTML = t.sobreP1;
+    document.getElementById('sobreP2').innerHTML = t.sobreP2;
+    document.getElementById('sobreP3').innerHTML = t.sobreP3;
+    document.getElementById('statYears').textContent = t.statYears;
+    document.getElementById('statCerts').textContent = t.statCerts;
+    document.getElementById('statLangs').textContent = t.statLangs;
+    document.getElementById('statMissions').textContent = t.statMissions;
+    document.getElementById('expTitle').textContent = t.expTitle;
+    document.getElementById('exp1When').textContent = t.exp1When;
+    document.getElementById('exp1Title').textContent = t.exp1Title;
+    document.getElementById('exp1Org').textContent = t.exp1Org;
+    document.getElementById('exp1L1').innerHTML = t.exp1L1;
+    document.getElementById('exp1L2').innerHTML = t.exp1L2;
+    document.getElementById('exp1L3').innerHTML = t.exp1L3;
+    document.getElementById('exp1L4').innerHTML = t.exp1L4;
+    document.getElementById('exp2When').textContent = t.exp2When;
+    document.getElementById('exp2Title').textContent = t.exp2Title;
+    document.getElementById('exp2Org').textContent = t.exp2Org;
+    document.getElementById('exp2L1').innerHTML = t.exp2L1;
+    document.getElementById('exp2L2').innerHTML = t.exp2L2;
+    document.getElementById('exp2L3').innerHTML = t.exp2L3;
+    document.getElementById('exp2L4').innerHTML = t.exp2L4;
+    document.getElementById('exp3When').textContent = t.exp3When;
+    document.getElementById('exp3Title').textContent = t.exp3Title;
+    document.getElementById('exp3Org').textContent = t.exp3Org;
+    document.getElementById('exp3L1').innerHTML = t.exp3L1;
+    document.getElementById('exp3L2').innerHTML = t.exp3L2;
+    document.getElementById('exp3L3').innerHTML = t.exp3L3;
+    document.getElementById('exp4When').textContent = t.exp4When;
+    document.getElementById('exp4Title').textContent = t.exp4Title;
+    document.getElementById('exp4Org').textContent = t.exp4Org;
+    document.getElementById('exp4L1').textContent = t.exp4L1;
+    document.getElementById('exp4L2').textContent = t.exp4L2;
+    document.getElementById('exp4L3').textContent = t.exp4L3;
+    document.getElementById('formTitle').textContent = t.formTitle;
+    document.getElementById('form1When').textContent = t.form1When;
+    document.getElementById('form1Title').textContent = t.form1Title;
+    document.getElementById('form1Org').textContent = t.form1Org;
+    document.getElementById('form1Desc').textContent = t.form1Desc;
+    document.getElementById('form2When').textContent = t.form2When;
+    document.getElementById('form2Title').textContent = t.form2Title;
+    document.getElementById('form2Org').textContent = t.form2Org;
+    document.getElementById('form2Desc').textContent = t.form2Desc;
+    document.getElementById('form3When').textContent = t.form3When;
+    document.getElementById('form3Title').textContent = t.form3Title;
+    document.getElementById('form3Org').textContent = t.form3Org;
+    document.getElementById('form3Desc').textContent = t.form3Desc;
+    document.getElementById('skillsTitle').textContent = t.skillsTitle;
+    document.getElementById('langPt').textContent = t.langPt;
+    document.getElementById('langEn').textContent = t.langEn;
+    document.getElementById('langFr').textContent = t.langFr;
+    document.getElementById('langEs').textContent = t.langEs;
+    document.getElementById('ctaTitle').innerHTML = t.ctaTitle;
+    document.getElementById('ctaDesc').textContent = t.ctaDesc;
+    document.getElementById('ctaBtn').textContent = t.ctaBtn;
+    
+    // Guardar preferência
+    localStorage.setItem('pref-lang', lang);
+    document.getElementById('langSelect').value = lang;
+    document.documentElement.setAttribute('data-lang', lang);
+  }
+
+  // ===== DADOS DOS DIPLOMAS =====
   const diplomas = {
     cert1: {
       title: "CSCO — Certified SME Cyber Security Officer",
@@ -1502,12 +1697,10 @@
     document.body.style.overflow = 'auto';
   }
 
-  // Fechar modal ao clicar fora
   document.getElementById('diplomaModal').addEventListener('click', function(e) {
     if (e.target === this) closeDiploma();
   });
 
-  // Fechar modal com ESC
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeDiploma();
   });
@@ -1545,7 +1738,6 @@
     setTheme(current === 'dark' ? 'light' : 'dark');
   });
 
-  // Carregar tema salvo
   const savedTheme = localStorage.getItem('pref-theme') || 'dark';
   setTheme(savedTheme);
 
@@ -1559,6 +1751,16 @@
       document.getElementById('tab-' + tabId).classList.add('active');
     });
   });
+
+  // ===== IDIOMA =====
+  document.getElementById('langSelect').addEventListener('change', function() {
+    setLanguage(this.value);
+  });
+
+  // Carregar idioma salvo
+  const savedLang = localStorage.getItem('pref-lang') || 'pt';
+  setLanguage(savedLang);
+  document.getElementById('langSelect').value = savedLang;
 
   // ===== ANIMAÇÃO DAS BARRAS =====
   setTimeout(() => {
