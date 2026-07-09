@@ -181,8 +181,8 @@ const diplomas = {
       prof5: "Resposta a Incidentes",
       prof6: "Instrução Física",
       ctaTitle: "📡 Vamos conversar?",
-      ctaDesc: "Se estás à procura de um especialista em cibersegurança, comunicações navais ou instrução física, envia-me uma mensagem.",
-      ctaBtn: "✉ Enviar email",
+      ctaDesc: "Se estás à procura de um Especialista em Cibersegurança, Técnico em Comunicações e Sistemas de Informação Navais ou Instrutor de Educação Física e Desporto, envia-me uma mensagem.",
+      ctaBtn: "✉ Enviar e-mail",
       // Skills categories
       skillCat1: "🛡️ Cibersegurança",
       skillCat2: "📡 Redes e Comunicações",
@@ -270,7 +270,7 @@ const diplomas = {
       statLangs: "Languages",
       statMissions: "Missions",
       expTitle: "Professional Experience",
-      exp1When: "2024 — present",
+      exp1When: "2023 — present",
       exp1Title: "Advanced Defensive Cybersecurity Operations Analyst",
       exp1Org: "EMGFA · Lisbon",
       exp1L1: "<strong>Continuous Monitoring:</strong> 24/7 surveillance, SIEM, IDS/IPS and advanced firewalls.",
@@ -539,6 +539,9 @@ const diplomas = {
     document.getElementById('sobreP1').innerHTML = t.sobreP1;
     document.getElementById('sobreP2').innerHTML = t.sobreP2;
     document.getElementById('sobreP3').innerHTML = t.sobreP3;
+    document.getElementById('sobreP4').innerHTML = t.sobreP4;
+    document.getElementById('sobreP5').innerHTML = t.sobreP5;
+    document.getElementById('sobreP6').innerHTML = t.sobreP6;
     document.getElementById('statYears').textContent = t.statYears;
     document.getElementById('statCerts').textContent = t.statCerts;
     document.getElementById('statLangs').textContent = t.statLangs;
